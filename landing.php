@@ -169,7 +169,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
     <!-- Kontak / CTA -->
-    <section id="lapor" class="py-20 bg-brand-green text-white">
+    <section id="lapor" class="py-40 bg-brand-green text-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">
                 Ada longsor di daerah sekitarmu?
