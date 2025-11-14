@@ -78,19 +78,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body class="font-sans bg-brand-light text-brand-dark flex flex-col min-h-screen">
 
-    <?php include 'navbar.php' ?>
-
     <!-- Konten Utama: Form Login -->
     <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full space-y-8">
             <!-- Card Login -->
             <div class="bg-white shadow-2xl rounded-2xl p-8 sm:p-10">
                 <!-- LOGO -->
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-brand-dark">
-                        LOGO
-                    </h2>
-                    <p class="mt-2 text-gray-600">Login untuk mengakses dashboard admin</p>
+                <div class="text-center mb-4">
+                    <img src="assets/logobg.png" alt="" class="mx-auto w-60 block p-2">
+                    <p class="mt-1 text-gray-600 text-sm">Login untuk mengakses dashboard admin</p>
                 </div>
 
                 <!-- Tampilkan pesan error jika ada -->
@@ -131,15 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </form>
 
-                <!-- Link ke Register -->
-                <div class="text-center mt-6">
-                    <p class="text-sm text-gray-600">
-                        Belum punya akun?
-                        <a href="register.php" class="font-medium text-brand-green hover:text-green-800">
-                            Daftar di sini
-                        </a>
-                    </p>
-                </div>
+                
             </div>
         </div>
     </main>
