@@ -1,68 +1,46 @@
 <?php
-// Memulai sesi
 session_start();
 
-// Jika pengguna sudah login, alihkan ke dashboard
+// Jika sudah login
 if (isset($_SESSION['user_id'])) {
     header("Location: dashboard.php");
     exit;
 }
 
-// Memasukkan file konfigurasi database
 require_once 'config.php';
 
 $error_message = '';
 
-// Cek jika form telah disubmit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
-    // Validasi dasar
     if (empty($username) || empty($password)) {
         $error_message = "Username dan password tidak boleh kosong.";
     } else {
-        // Menyiapkan statement SQL untuk mencegah SQL Injection
-        $sql = "SELECT id, username, password_hash FROM users WHERE username = ?";
-        
-        if ($stmt = $conn->prepare($sql)) {
-            $stmt->bind_param("s", $username);
-            
-            if ($stmt->execute()) {
-                $stmt->store_result();
-                
-                // Cek jika username ada
-                if ($stmt->num_rows == 1) {
-                    $stmt->bind_result($id, $username, $hashed_password);
-                    if ($stmt->fetch()) {
-                        // Verifikasi password
-                        if (password_verify($password, $hashed_password)) {
-                            // Password benar, mulai sesi baru
-                            session_regenerate_id();
-                            $_SESSION['user_id'] = $id;
-                            $_SESSION['username'] = $username;
-                            
-                            // Alihkan ke dashboard
-                            header("Location: dashboard.php");
-                            exit;
-                        } else {
-                            // Password salah
-                            $error_message = "Username atau password salah.";
-                        }
-                    }
-                } else {
-                    // Username tidak ditemukan
-                    $error_message = "Username atau password salah.";
-                }
+        // LOGIN SEDERHANA TANPA HASH
+        $sql = "SELECT id, username, password FROM users WHERE username = '$username'";
+        $result = $conn->query($sql);
+
+        if ($result && $result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+
+            if ($password === $row['password']) { // langsung cocokkan password
+                $_SESSION['user_id'] = $row['id'];
+                $_SESSION['username'] = $row['username'];
+
+                header("Location: dashboard.php");
+                exit;
             } else {
-                $error_message = "Terjadi kesalahan. Silakan coba lagi.";
+                $error_message = "Username atau password salah.";
             }
-            $stmt->close();
+        } else {
+            $error_message = "Username atau password salah.";
         }
     }
-    $conn->close();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="id">
