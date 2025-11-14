@@ -80,11 +80,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Header & Navigasi -->
     <header class="sticky top-0 z-50 w-full bg-white shadow-md">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center h-20">
             <a href="#" class="block">
                 <!-- Menggunakan gambar logo yang diunggah -->
                 <!-- Pastikan file 'logobg.jpg' berada di direktori yang sama dengan index.php atau perbarui path-nya -->
-                <img src="assets/logobg.png" alt="SILONGSOR Logo" class="h-auto w-full"
+                <img src="assets/logobg.png" alt="SILONGSOR Logo" class="h-40 w-auto"
                      onerror="this.onerror=null; this.src='https://placehold.co/180x40/f97316/1F2937?text=SILONGSOR';">
             </a>
             <div class="hidden md:flex space-x-6">
