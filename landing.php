@@ -220,7 +220,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row gap-16">
                 <!-- Info Kontak -->
-                <div class="w-full md:w-1/3">
+                <div class="w-full md:w-1/2">
                     <h3 class="text-2xl font-semibold text-brand-dark mb-4">Contact</h3>
                     <p class="text-gray-600 mb-4">Hubungi kami jika ada pertanyaan lebih lanjut.</p>
                     <p class="text-gray-600"><strong>Email:</strong> info@silongsor.id</p>
@@ -239,7 +239,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <!-- Form Saran & Keluhan -->
-                <div class="w-full md:w-2/3 bg-brand-light p-8 rounded-lg shadow-lg">
+                <div class="w-full md:w-1/2 bg-brand-light p-8 rounded-lg shadow-lg">
                     <h3 class="text-2xl font-semibold text-brand-dark mb-2">Saran & Keluhan</h3>
                     <p class="text-gray-600 mb-6">Kami menghargai masukan Anda untuk perbaikan.</p>
 
