@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include 'navbar.php' ?>
 
     <!-- Hero Section -->
-    <section id="beranda" class="relative py-20 md:py-32 bg-brand-light">
+    <section id="beranda" class="relative min-h-screen flex items-center bg-brand-light">
         <!-- Overlay Gambar (opsional) -->
         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1600x900/a3e635/1f2937?text=Ilustrasi+Lereng+Aman'); opacity: 0.1;"></div>
         
@@ -169,7 +169,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
     <!-- Kontak / CTA -->
-    <section id="lapor" class="py-20 bg-brand-green text-white">
+    <section id="lapor" class="min-h-screen flex items-center justify-center bg-brand-green text-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">
                 Ada longsor di daerah sekitarmu?
