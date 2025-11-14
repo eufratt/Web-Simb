@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a href="#" class="block">
                 <!-- Menggunakan gambar logo yang diunggah -->
                 <!-- Pastikan file 'logobg.jpg' berada di direktori yang sama dengan index.php atau perbarui path-nya -->
-                <img src="assets/logobg.png" alt="SILONGSOR Logo" class="h-10 w-auto"
+                <img src="assets/logobg.png" alt="SILONGSOR Logo" class="h-auto w-full"
                      onerror="this.onerror=null; this.src='https://placehold.co/180x40/f97316/1F2937?text=SILONGSOR';">
             </a>
             <div class="hidden md:flex space-x-6">
