@@ -181,7 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
     <!-- Bagian Saran & Keluhan (Sesuai Mockup) -->
-    <section id="kontak" class="py-20 bg-white">
+    <section id="kontak" class="py-10 bg-white">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row gap-16">
                 <!-- Info Kontak -->
