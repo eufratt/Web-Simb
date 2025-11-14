@@ -100,36 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body class="font-sans bg-brand-light text-brand-dark flex flex-col min-h-screen">
 
-    <!-- Header & Navigasi (Berdasarkan wireframe) -->
-    <header class="sticky top-0 z-50 w-full bg-white shadow-md">
-        <!-- Navigasi Utama -->
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center h-20">
-            <!-- Nama/Brand -->
-            <a href="index.php" class="text-3xl font-bold text-brand-dark">
-                Nama
-            </a>
-            <!-- Link Navigasi Utama -->
-            <div class="hidden md:flex space-x-8">
-                <a href="index.php#beranda" class="text-gray-600 hover:text-brand-green font-medium">Beranda</a>
-                <a href="#" class="text-gray-600 hover:text-brand-green font-medium">Berita</a>
-                <a href="#" class="text-gray-600 hover:text-brand-green font-medium">Artikel</a>
-                <a href="index.php#lapor" class="text-gray-600 hover:text-brand-green font-medium">Lapor</a>
-                <a href="#" class="text-gray-600 hover:text-brand-green font-medium">Peta</a>
-            </div>
-            <!-- Tombol (jika perlu) -->
-            <a href="login.php" class="hidden md:inline-block bg-brand-brown text-white px-5 py-2 rounded-lg font-medium shadow-lg hover:bg-yellow-900 transition duration-300">
-                Login Admin
-            </a>
-        </nav>
-        <!-- Navigasi Sekunder (Berdasarkan wireframe) -->
-        <div class="w-full bg-gray-100 border-t border-gray-200">
-            <div class="container mx-auto px-6 py-2 flex justify-end items-center space-x-6">
-                <a href="mailto:info@silongsor.id" class="text-sm text-gray-500 hover:text-brand-green">Email</a>
-                <a href="#" class="text-sm text-gray-500 hover:text-brand-green">Media Sosial</a>
-                <a href="index.php#kontak" class="text-sm text-gray-500 hover:text-brand-green">Saran</a>
-            </div>
-        </div>
-    </header>
+    <?php include 'navbar.php' ?>
 
     <!-- Konten Utama: Form Login -->
     <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
