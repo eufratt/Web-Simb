@@ -1,5 +1,5 @@
 <!-- Header & Navigasi -->
-    <header class="sticky top-0 z-50 w-full bg-white shadow-md">
+    <header class="sticky top-0 z-50 w-full bg-gray-300 shadow-md">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center h-20">
             <a href="#" class="block">
                 <!-- Menggunakan gambar logo yang diunggah -->
@@ -10,8 +10,7 @@
             <div class="hidden md:flex space-x-6">
                 <a href="#info" class="text-gray-600 hover:text-brand-green font-medium">Info</a>
                 <a href="#mitigasi" class="text-gray-600 hover:text-brand-green font-medium">Mitigasi</a>
-                <a href="#kontak" class="text-gray-600 hover:text-brand-green font-medium">Kontak</a>
-                <a href="#lapor" class="text-gray-600 hover:text-brand-green font-medium">Lapor</a>
+                <a href="#saran" class="text-gray-600 hover:text-brand-green font-medium">Saran</a>
             </div>
             <a href="#lapor" class="hidden md:inline-block bg-brand-brown text-white px-5 py-2 rounded-lg font-medium shadow-lg hover:bg-yellow-900 transition duration-300">
                 Lapor Sekarang
@@ -27,8 +26,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4 space-y-2">
             <a href="#info" class="block text-gray-600 hover:text-brand-green font-medium">Info</a>
             <a href="#mitigasi" class="block text-gray-600 hover:text-brand-green font-medium">Mitigasi</a>
-            <a href="#kontak" class="block text-gray-600 hover:text-brand-green font-medium">Kontak</a>
-            <a href="#lapor" class="block text-gray-600 hover:text-brand-green font-medium">Lapor</a>
+            <a href="#saran" class="block text-gray-600 hover:text-brand-green font-medium">Saran</a>
             <a href="#lapor" class="block w-full text-center bg-brand-brown text-white px-5 py-2 rounded-lg font-medium shadow-lg hover:bg-yellow-900 transition duration-300 mt-2">
                 Lapor Sekarang
             </a>

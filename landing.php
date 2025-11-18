@@ -6,7 +6,7 @@ $message_type = ''; // Tipe pesan: 'success' atau 'error'
 
 // Cek apakah formulir telah disubmit menggunakan metode POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+
     // Ambil data dari formulir dan bersihkan
     // Gunakan trim() untuk menghapus spasi di awal/akhir
     // Gunakan htmlspecialchars() untuk keamanan (mencegah XSS)
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validasi sederhana: pastikan email dan keluhan tidak kosong
     if (!empty($email) && !empty($keluhan)) {
-        
+
         // --- SIMULASI PENGIRIMAN ---
         // Di aplikasi nyata, di sinilah Anda akan:
         // 1. Mengirim email:
@@ -33,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Jika berhasil, siapkan pesan sukses
         $message = "Terima kasih! Masukan Anda telah kami terima.";
         $message_type = 'success';
-
     } else {
         // Jika validasi gagal, siapkan pesan error
         $message = "Harap pastikan E-mail Address dan Keluhan telah diisi.";
@@ -76,16 +75,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     </style>
 </head>
+
 <body class="font-sans bg-white text-brand-dark">
 
     <?php include 'navbar.php' ?>
 
-    <!-- Hero Section -->
-    <section id="beranda" class="relative min-h-screen flex items-center bg-brand-light">
-        <!-- Overlay Gambar (opsional) -->
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1600x900/a3e635/1f2937?text=Ilustrasi+Lereng+Aman'); opacity: 0.1;"></div>
-        
-        <div class="container mx-auto px-6 relative z-10 text-center">
+    <!-- HERO SLIDER -->
+    <section id="beranda" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-light">
+
+        <!-- Wrapper semua slide -->
+        <div id="slider" class="absolute inset-0 w-full h-full">
+
+            <!-- Slide 1 -->
+            <div class="slide absolute inset-0 opacity-100 transition-opacity duration-3000">
+                <img src="assets/longsor1.jpeg"
+                    class="w-full h-full object-cover opacity-80">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-3000">
+                <img src="assets/longsor2.png"
+                    class="w-full h-full object-cover opacity-80">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-3000">
+                <img src="assets/longsor3.jpg"
+                    class="w-full h-full object-cover opacity-80">
+            </div>
+        </div>
+
+        <!-- Konten hero -->
+        <div class="relative z-10 text-center px-6">
             <h1 class="text-5xl md:text-7xl font-bold text-brand-dark mb-10 leading-tight">
                 Bencana <span class="text-brand-brown">Longsor</span>
             </h1>
@@ -95,7 +116,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </a>
             </div>
         </div>
+
+        <!-- Tombol Prev / Next -->
+        <button id="prevBtn" class="absolute left-5 top-1/2 -translate-y-1/2 bg-black/40 text-white px-4 py-2 rounded-full">
+            ‹
+        </button>
+        <button id="nextBtn" class="absolute right-5 top-1/2 -translate-y-1/2 bg-black/40 text-white px-4 py-2 rounded-full">
+            ›
+        </button>
     </section>
+
 
     <!-- Informasi: Apa Itu Tanah Longsor? -->
     <section id="info" class="py-20 bg-white">
@@ -174,7 +204,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h2 class="text-3xl md:text-4xl font-bold mb-6">
                 Ada longsor di daerah sekitarmu?
             </h2>
-            <a href="#" class="bg-white text-brand-brown px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-gray-100 transition duration-300">
+            <a href="lapor.php" class="bg-white text-brand-brown px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-gray-100 transition duration-300">
                 Lapor Sekarang
             </a>
         </div>
@@ -190,15 +220,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p class="text-gray-600 mb-4">Hubungi kami jika ada pertanyaan lebih lanjut.</p>
                     <p class="text-gray-600"><strong>Email:</strong> info@silongsor.id</p>
                     <p class="text-gray-600"><strong>Telepon:</strong> (021) 123-4567</p>
-                    
+
                     <h3 class="text-2xl font-semibold text-brand-dark mt-8 mb-4">Follow Us</h3>
                     <!-- Social Media (opsional) -->
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-500 hover:text-brand-green">
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.24 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.24 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                            </svg>
                         </a>
                         <a href="#" class="text-gray-500 hover:text-brand-green">
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -208,9 +242,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h3 class="text-2xl font-semibold text-brand-dark mb-2">Saran & Keluhan</h3>
                     <p class="text-gray-600 mb-6">Kami menghargai masukan Anda untuk perbaikan.</p>
 
-                    <?php 
+                    <?php
                     // Menampilkan pesan feedback jika ada
-                    if ($message): 
+                    if ($message):
                     ?>
                         <div class="mb-4 p-4 rounded-lg <?php echo $message_type == 'success' ? 'bg-green-100 text-green-800 border border-green-300' : 'bg-red-100 text-red-800 border border-red-300'; ?>" role="alert">
                             <?php echo $message; ?>
@@ -242,13 +276,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-6 bg-brand-dark text-gray-400">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 SILONGSOR. Dibuat untuk tujuan edukasi.</p>
-            <p class="text-sm mt-2">Selalu utamakan informasi dari lembaga resmi seperti BNPB atau BPBD setempat.</p>
-        </div>
-    </footer>
+    <?php include "footer.php"?>
 
     <script>
         // JavaScript untuk menu mobile
@@ -266,7 +294,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // slider beranda
+        const slides = document.querySelectorAll(".slide");
+        let index = 0;
+
+        function showSlide(i) {
+            slides.forEach((slide, idx) => {
+                slide.style.opacity = idx === i ? "1" : "0";
+            });
+        }
+
+        document.getElementById("nextBtn").addEventListener("click", () => {
+            index = (index + 1) % slides.length;
+            showSlide(index);
+        });
+
+        document.getElementById("prevBtn").addEventListener("click", () => {
+            index = (index - 1 + slides.length) % slides.length;
+            showSlide(index);
+        });
+
+        // Auto slide
+        setInterval(() => {
+            index = (index + 1) % slides.length;
+            showSlide(index);
+        }, 4000);
     </script>
 
 </body>
+
 </html>
