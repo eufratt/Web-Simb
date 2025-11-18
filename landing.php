@@ -73,6 +73,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         html {
             scroll-behavior: smooth;
         }
+
+        @keyframes appear{
+            from{
+                opacity: 0;
+                scale: 0.5;
+            }
+            to{
+                opacity: 1;
+                scale: 1;
+            }
+        }
+
+        .animasi{
+                animation: appear 1.2s ease-out;
+                animation-timeline: view();
+                animation-range: entry 0% cover 50%;
+                animation-duration: 10s;
+        }
+
+        .block{
+            animation: appear 1.2s ease-out;
+                animation-timeline: view();
+                animation-range: entry 0% cover 30%;
+                animation-duration: 10s;
+        }
     </style>
 </head>
 
@@ -84,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section id="beranda" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-light">
 
         <!-- Wrapper semua slide -->
-        <div id="slider" class="absolute inset-0 w-full h-full">
+        <div id="slider" class="absolute inset-0 w-full h-full blur-sm">
 
             <!-- Slide 1 -->
             <div class="slide absolute inset-0 opacity-100 transition-opacity duration-3000">
@@ -132,7 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <!-- Gambar/Ilustrasi -->
-                <div class="w-full md:w-1/2">
+                <div class="w-full md:w-1/2 animasi">
                     <img src="https://placehold.co/600x400/d4d4d8/1f2937?text=Ilustrasi+Tanah+Longsor" alt="Ilustrasi Tanah Longsor" class="rounded-lg shadow-2xl object-cover w-full h-full">
                 </div>
                 <!-- Teks Penjelasan -->
@@ -164,7 +189,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     Gimana cara menanggulanginya?
                 </h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 animasi">
                 <!-- Kartu Mitigasi 1 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
                     <img src="https://placehold.co/600x400/86efac/1c1917?text=Reboisasi" alt="Menanam Pohon" class="w-full h-48 object-cover">
@@ -238,7 +263,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <!-- Form Saran & Keluhan -->
-                <div class="w-full md:w-1/2 bg-brand-light p-8 rounded-lg shadow-lg">
+                <div class="w-full md:w-1/2 bg-brand-light p-8 rounded-lg shadow-lg block">
                     <h3 class="text-2xl font-semibold text-brand-dark mb-2">Saran & Keluhan</h3>
                     <p class="text-gray-600 mb-6">Kami menghargai masukan Anda untuk perbaikan.</p>
 
