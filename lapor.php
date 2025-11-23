@@ -4,49 +4,94 @@
 $message = '';
 $message_type = '';
 
+// Koneksi ke database
+$koneksi = new mysqli("localhost", "root", "", "tanah_longsor_db");
+
+if ($koneksi->connect_error) {
+    die("Koneksi gagal: " . $koneksi->connect_error);
+}
+
+date_default_timezone_set('Asia/Jakarta');
+
 // Cek apakah formulir disubmit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+
     // 1. Ambil dan bersihkan data input
     $nama = htmlspecialchars(trim($_POST['nama'] ?? ''));
-    $judul = htmlspecialchars(trim($_POST['judul'] ?? ''));
     $isi = htmlspecialchars(trim($_POST['isi'] ?? ''));
     $tanggal = htmlspecialchars(trim($_POST['tanggal'] ?? ''));
     $lokasi = htmlspecialchars(trim($_POST['lokasi'] ?? ''));
-    
+    $tanggal = date("Y-m-d H:i:s");
+
+
     // 2. Validasi sederhana
-    if (empty($nama) || empty($judul) || empty($isi) || empty($tanggal) || empty($lokasi)) {
+    if (empty($nama) || empty($isi) || empty($tanggal) || empty($lokasi)) {
         $message = "Mohon lengkapi semua kolom isian.";
         $message_type = 'error';
     } else {
-        
-        // 3. Handle Upload Foto
+
+        // --- 3. Handle Upload Foto ---
         $uploadOk = true;
+        $fotoNameFinal = NULL;
+
         if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
+
             $allowed = ['jpg', 'jpeg', 'png', 'gif'];
             $filename = $_FILES['foto']['name'];
             $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
-            
+
             if (!in_array($ext, $allowed)) {
                 $message = "Format file foto harus JPG, JPEG, PNG, atau GIF.";
                 $message_type = 'error';
                 $uploadOk = false;
             }
-            // Di sini Anda akan memindahkan file menggunakan move_uploaded_file()
-            // move_uploaded_file($_FILES['foto']['tmp_name'], 'uploads/' . $filename);
+
+            // Nama file baru unik
+            $fotoNameFinal = time() . "_" . rand(1000, 9999) . "." . $ext;
+
+            // Pindahkan file
+            if ($uploadOk) {
+                move_uploaded_file($_FILES['foto']['tmp_name'], 'uploads/' . $fotoNameFinal);
+            }
         }
 
+        // --- 4. INSERT ke database ---
         if ($uploadOk) {
-            // Jika semua valid, tampilkan pesan sukses
-            // Di aplikasi nyata, simpan data ke database di sini
-            $message = "Laporan Anda berhasil dikirim! Terima kasih atas informasinya.";
-            $message_type = 'success';
+
+            // Jika tidak ada foto diupload, simpan NULL
+            if ($fotoNameFinal == NULL) {
+                $fotoValue = "NULL";
+            } else {
+                $fotoValue = "'$fotoNameFinal'";
+            }
+
+            // Query INSERT biasa
+            $sql = "
+            INSERT INTO laporan (nama, lokasi, deskripsi, tanggal, foto)
+            VALUES (
+                '$nama',
+                '$lokasi',
+                '$isi',
+                '$tanggal',
+                $fotoValue
+            )
+            ";
+
+            if ($koneksi->query($sql)) {
+                $message = "Laporan Anda berhasil dikirim! Terima kasih atas informasinya.";
+                $message_type = "success";
+            } else {
+                $message = "Terjadi kesalahan: " . $koneksi->error;
+                $message_type = "error";
+            }
         }
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,7 +102,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    },
                     colors: {
                         'brand-green': '#166534',
                         'brand-brown': '#78350F',
@@ -69,14 +116,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     </script>
 </head>
+
 <body class="font-sans bg-white text-brand-dark flex flex-col min-h-screen">
 
-        <?php include "navbar.php" ?>
+    <?php include "navbar.php" ?>
 
     <!-- Konten Utama -->
     <main class="flex-grow py-12 px-4">
         <div class="container mx-auto max-w-3xl">
-            
+
             <!-- Pesan Feedback PHP -->
             <?php if ($message): ?>
                 <div class="mb-6 p-4 rounded-lg <?php echo $message_type == 'success' ? 'bg-green-100 text-green-800 border border-green-300' : 'bg-red-100 text-red-800 border border-red-300'; ?>">
@@ -86,31 +134,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <!-- Kartu Form (Background Abu-abu sesuai Wireframe) -->
             <div class="bg-gray-200 rounded-[40px] p-8 md:p-12 shadow-inner">
-                
+
                 <form action="lapor.php" method="POST" enctype="multipart/form-data" class="space-y-6">
-                    
+
                     <!-- Nama -->
                     <div>
-                        <input type="text" name="nama" placeholder="Ketik Nama Anda" 
-                               class="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent shadow-sm text-gray-700 placeholder-gray-500 bg-white">
-                    </div>
-
-                    <!-- Judul Laporan -->
-                    <div>
-                        <input type="text" name="judul" placeholder="Ketik Judul Laporan Anda" 
-                               class="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent shadow-sm text-gray-700 placeholder-gray-500 bg-white">
+                        <input type="text" name="nama" placeholder="Ketik Nama Anda"
+                            class="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent shadow-sm text-gray-700 placeholder-gray-500 bg-white">
                     </div>
 
                     <!-- Isi Laporan (Textarea dengan rounded corner besar) -->
                     <div>
-                        <textarea name="isi" rows="6" placeholder="Ketik Isi Laporan Anda" 
-                                  class="w-full px-6 py-4 rounded-[30px] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent shadow-sm text-gray-700 placeholder-gray-500 bg-white resize-none"></textarea>
+                        <textarea name="isi" rows="6" placeholder="Ketik Isi Laporan Anda"
+                            class="w-full px-6 py-4 rounded-[30px] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent shadow-sm text-gray-700 placeholder-gray-500 bg-white resize-none"></textarea>
                     </div>
 
                     <!-- Tanggal Kejadian -->
                     <div class="relative">
-                        <input type="date" name="tanggal" 
-                               class="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent shadow-sm text-gray-700 placeholder-gray-500 bg-white cursor-pointer">
+                        <input type="date" name="tanggal"
+                            class="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent shadow-sm text-gray-700 placeholder-gray-500 bg-white cursor-pointer">
                         <!-- Label visual untuk placeholder date jika browser mendukung -->
                         <div class="absolute inset-y-0 right-0 flex items-center pr-6 pointer-events-none text-gray-500">
                             <!-- Icon Calendar -->
@@ -122,8 +164,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <!-- Lokasi Kejadian -->
                     <div>
-                        <input type="text" name="lokasi" placeholder="Ketik Lokasi Kejadian" 
-                               class="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent shadow-sm text-gray-700 placeholder-gray-500 bg-white">
+                        <input type="text" name="lokasi" placeholder="Ketik Lokasi Kejadian"
+                            class="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent shadow-sm text-gray-700 placeholder-gray-500 bg-white">
                     </div>
 
                     <!-- Unggah Foto -->
@@ -149,7 +191,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </main>
 
-    <?php include "footer.php"?>
+    <?php include "footer.php" ?>
 
 
     <script>
@@ -169,4 +211,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </script>
 
 </body>
+
 </html>

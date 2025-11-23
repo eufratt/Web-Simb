@@ -1,43 +1,55 @@
 <?php
 // --- Bagian Logika PHP ---
 
-$message = '';  // Variabel untuk menyimpan pesan feedback
-$message_type = '';  // Tipe pesan: 'success' atau 'error'
+$message = '';  
+$message_type = '';
 
-// Cek apakah formulir telah disubmit menggunakan metode POST
+// Koneksi ke database
+$koneksi = new mysqli("localhost", "root", "", "tanah_longsor_db");
+
+// Cek koneksi
+if ($koneksi->connect_error) {
+    die("Koneksi gagal: " . $koneksi->connect_error);
+}
+
+date_default_timezone_set('Asia/Jakarta');
+
+// Cek submit form
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Ambil data dari formulir dan bersihkan
-    // Gunakan trim() untuk menghapus spasi di awal/akhir
-    // Gunakan htmlspecialchars() untuk keamanan (mencegah XSS)
-    $saran = isset($_POST['saran']) ? htmlspecialchars(trim($_POST['saran'])) : '';
+
+    $nama = isset($_POST['nama']) ? htmlspecialchars(trim($_POST['nama'])) : '';
     $email = isset($_POST['email']) ? htmlspecialchars(trim($_POST['email'])) : '';
-    $keluhan = isset($_POST['keluhan']) ? htmlspecialchars(trim($_POST['keluhan'])) : '';
+    $saran = isset($_POST['saran']) ? htmlspecialchars(trim($_POST['saran'])) : '';
+    $tanggal = date("Y-m-d H:i:s");
 
-    // Validasi sederhana: pastikan email dan keluhan tidak kosong
-    if (!empty($email) && !empty($keluhan)) {
-        // --- SIMULASI PENGIRIMAN ---
-        // Di aplikasi nyata, di sinilah Anda akan:
-        // 1. Mengirim email:
-        //    $to = "admin@silongsor.id";
-        //    $subject = "Masukan Baru: $saran";
-        //    $body = "Dari: $email\nKeluhan: $keluhan";
-        //    mail($to, $subject, $body);
-        //
-        // 2. Menyimpan ke database:
-        //    $db->prepare("INSERT INTO masukan (saran, email, keluhan) VALUES (?, ?, ?)");
-        //    ...dan seterusnya
-        // ---------------------------
+    if (!empty($email) && !empty($saran)) {
 
-        // Jika berhasil, siapkan pesan sukses
-        $message = 'Terima kasih! Masukan Anda telah kami terima.';
-        $message_type = 'success';
+        // INSERT INTO BIASA
+        $sql = "
+            INSERT INTO saran (nama, email, pesan, tanggal)
+            VALUES (
+                '$nama',
+                '$email',
+                '$saran',
+                '$tanggal'
+            )
+        ";
+
+        if ($koneksi->query($sql) === TRUE) {
+            $message = 'Terima kasih! Masukan Anda telah kami terima.';
+            $message_type = 'success';
+        } else {
+            $message = 'Gagal menyimpan data: ' . $koneksi->error;
+            $message_type = 'error';
+        }
+
     } else {
-        // Jika validasi gagal, siapkan pesan error
         $message = 'Harap pastikan E-mail Address dan Keluhan telah diisi.';
         $message_type = 'error';
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -362,16 +374,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <!-- Formulir diubah untuk mengirim data ke file ini sendiri (index.php) -->
                     <form action="#kontak" method="POST">
                         <div class="mb-4">
-                            <label for="saran" class="block text-sm font-medium text-gray-700 mb-1">Saran</label>
-                            <input type="text" id="saran" name="saran" placeholder="Tuliskan saran Anda..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-green focus:border-brand-green">
+                            <label for="nama" class="block text-sm font-medium text-gray-700 mb-1">Nama</label>
+                            <input type="text" id="nama" name="nama" placeholder="Tuliskan nama Anda..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-green focus:border-brand-green">
                         </div>
                         <div class="mb-4">
                             <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail Address</label>
                             <input type="email" id="email" name="email" placeholder="email@anda.com" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-green focus:border-brand-green">
                         </div>
                         <div class="mb-6">
-                            <label for="keluhan" class="block text-sm font-medium text-gray-700 mb-1">Keluhan</label>
-                            <textarea id="keluhan" name="keluhan" rows="4" placeholder="Jelaskan keluhan Anda di sini..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-green focus:border-brand-green"></textarea>
+                            <label for="saran" class="block text-sm font-medium text-gray-700 mb-1">Saran</label>
+                            <textarea id="saran" name="saran" rows="4" placeholder="Jelaskan keluhan Anda di sini..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-green focus:border-brand-green"></textarea>
                         </div>
                         <div>
                             <button type="submit" class="w-auto bg-brand-green text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-green-800 transition duration-300">
