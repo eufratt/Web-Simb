@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 animation-duration: 10s;
         }
 
-        .block{
+        .block, .lapor{
             animation: appear 1.2s ease-out;
                 animation-timeline: view();
                 animation-range: entry 0% cover 30%;
@@ -225,7 +225,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Kontak / CTA -->
     <section id="lapor" class="py-40 bg-brand-green text-white">
-        <div class="container mx-auto px-6 text-center">
+        <div class="lapor container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">
                 Ada longsor di daerah sekitarmu?
             </h2>
