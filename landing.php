@@ -1,12 +1,11 @@
 <?php
 // --- Bagian Logika PHP ---
 
-$message = ''; // Variabel untuk menyimpan pesan feedback
-$message_type = ''; // Tipe pesan: 'success' atau 'error'
+$message = '';  // Variabel untuk menyimpan pesan feedback
+$message_type = '';  // Tipe pesan: 'success' atau 'error'
 
 // Cek apakah formulir telah disubmit menggunakan metode POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Ambil data dari formulir dan bersihkan
     // Gunakan trim() untuk menghapus spasi di awal/akhir
     // Gunakan htmlspecialchars() untuk keamanan (mencegah XSS)
@@ -16,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validasi sederhana: pastikan email dan keluhan tidak kosong
     if (!empty($email) && !empty($keluhan)) {
-
         // --- SIMULASI PENGIRIMAN ---
         // Di aplikasi nyata, di sinilah Anda akan:
         // 1. Mengirim email:
@@ -31,11 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // ---------------------------
 
         // Jika berhasil, siapkan pesan sukses
-        $message = "Terima kasih! Masukan Anda telah kami terima.";
+        $message = 'Terima kasih! Masukan Anda telah kami terima.';
         $message_type = 'success';
     } else {
         // Jika validasi gagal, siapkan pesan error
-        $message = "Harap pastikan E-mail Address dan Keluhan telah diisi.";
+        $message = 'Harap pastikan E-mail Address dan Keluhan telah diisi.';
         $message_type = 'error';
     }
 }
@@ -161,21 +159,106 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <img src="https://placehold.co/600x400/d4d4d8/1f2937?text=Ilustrasi+Tanah+Longsor" alt="Ilustrasi Tanah Longsor" class="rounded-lg shadow-2xl object-cover w-full h-full">
                 </div>
                 <!-- Teks Penjelasan -->
-                <div class="w-full md:w-1/2">
-                    <span class="text-sm font-semibold text-brand-green uppercase tracking-wider">Definisi</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6 mt-2">
-                        Apakah kamu tahu?
-                    </h2>
-                    <p class="text-gray-600 text-lg mb-4">
-                        Tanah longsor adalah perpindahan material pembentuk lereng (berupa batuan, bahan rombakan, tanah, atau material campuran) yang bergerak ke bawah atau keluar lereng.
-                    </p>
-                    <p class="text-gray-600 text-lg mb-6">
-                        Peristiwa ini dapat terjadi secara tiba-tiba atau perlahan dan seringkali dipicu oleh faktor alam seperti curah hujan tinggi, gempa bumi, atau aktivitas manusia yang tidak bertanggung jawab.
-                    </p>
-                    <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-2 rounded-lg text-center">
-                        <p class="font-medium">Memahami risiko di sekitar kita adalah langkah awal untuk keselamatan.</p>
-                    </div>
-                </div>
+                <div class="w-full md:w-1/2 overscroll-contain overflow-y-auto h-80 p-4">
+
+    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6 mt-2">
+        Definisi Tanah Longsor
+    </h2>
+
+    <p class="text-gray-600 text-lg mb-4">
+        Tanah longsor adalah perpindahan material pembentuk lereng (berupa batuan, bahan rombakan, tanah, atau material campuran) 
+        yang bergerak ke bawah atau keluar lereng.
+    </p>
+
+    <p class="text-gray-600 text-lg mb-6">
+        Peristiwa ini dapat terjadi secara tiba-tiba atau perlahan dan seringkali dipicu oleh faktor alam seperti curah hujan tinggi, 
+        gempa bumi, atau aktivitas manusia yang tidak bertanggung jawab.
+    </p>
+
+    <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-2 rounded-lg text-center">
+        <p class="font-medium">Memahami risiko di sekitar kita adalah langkah awal untuk keselamatan.</p>
+    </div>
+
+
+    <!-- =============================== -->
+    <!-- FAKTOR PENYEBAB LONGSOR -->
+    <!-- =============================== -->
+
+    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6 mt-6">
+        Faktor Penyebab Terjadinya Longsor
+    </h2>
+
+    <h4 class="text-2xl font-semibold text-brand-dark mb-4">
+        A. Faktor Alam
+    </h4>
+
+    <ol class="list-decimal ml-6 text-gray-700 space-y-2 mb-6">
+        <li>Perubahan kondisi geologi seperti lapisan tanah yang rapuh atau batuan yang mudah pecah.</li>
+        <li>Curah hujan tinggi yang membuat tanah jenuh air sehingga kehilangan kestabilannya.</li>
+        <li>Topografi curam seperti lereng bukit atau jurang yang rentan mengalami pergerakan tanah.</li>
+    </ol>
+
+    <h4 class="text-2xl font-semibold text-brand-dark mb-4">
+        B. Faktor Manusia
+    </h4>
+
+    <ol class="list-decimal ml-6 text-gray-700 space-y-2 mb-8">
+        <li>Penggundulan hutan dan hilangnya akar tanaman yang seharusnya memperkuat tanah.</li>
+        <li>Pembangunan permukiman atau infrastruktur di area rawan longsor tanpa analisis struktur tanah.</li>
+        <li>Sistem drainase buruk yang menyebabkan air menggenang di lereng sehingga memperlemah kestabilan tanah.</li>
+    </ol>
+
+
+    <!-- =============================== -->
+    <!-- TIPE-TIPE TANAH LONGSOR -->
+    <!-- =============================== -->
+
+    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
+        Tipe-Tipe Tanah Longsor
+    </h2>
+
+    <ul class="list-disc ml-6 text-gray-700 space-y-2 mb-8">
+        <li><strong>Falls</strong> – material batu atau tanah jatuh bebas dari tebing yang sangat curam.</li>
+        <li><strong>Slides</strong> – pergerakan tanah yang meluncur pada bidang gelincir, bisa translasi atau rotasional.</li>
+        <li><strong>Flows</strong> – tanah bergerak seperti cairan akibat kejenuhan air.</li>
+        <li><strong>Topples</strong> – tanah atau batuan terjungkal ke depan karena tekanan atau rotasi.</li>
+        <li><strong>Creep</strong> – pergerakan sangat lambat yang sering tidak disadari.</li>
+        <li><strong>Spread</strong> – penyebaran lateral massa tanah akibat kegagalan lapisan bawah.</li>
+    </ul>
+
+
+    <!-- =============================== -->
+    <!-- DAMPAK TANAH LONGSOR -->
+    <!-- =============================== -->
+
+    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
+        Dampak Tanah Longsor
+    </h2>
+
+    <h4 class="text-2xl font-semibold text-brand-dark mb-4">
+        Dampak Positif
+    </h4>
+
+    <ul class="list-disc ml-6 text-gray-700 space-y-2 mb-6">
+        <li>Meningkatkan kestabilan tanah setelah material lemah runtuh.</li>
+        <li>Membentuk lahan baru yang dapat dimanfaatkan untuk kegiatan tertentu.</li>
+        <li>Membantu proses pelapukan batuan sehingga menciptakan tanah subur.</li>
+        <li>Meningkatkan kelembapan tanah di area tertentu.</li>
+    </ul>
+
+    <h4 class="text-2xl font-semibold text-brand-dark mb-4">
+        Dampak Negatif
+    </h4>
+
+    <ul class="list-disc ml-6 text-gray-700 space-y-2 mb-10">
+        <li>Kerusakan lingkungan serta rusaknya ekosistem.</li>
+        <li>Kerugian materi seperti rumah, jalan, kendaraan, dan fasilitas umum.</li>
+        <li>Gangguan ekonomi serta lumpuhnya aktivitas masyarakat.</li>
+        <li>Risiko korban jiwa dan hilangnya tempat tinggal.</li>
+    </ul>
+
+</div>
+
             </div>
         </div>
     </section>
@@ -270,7 +353,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <?php
                     // Menampilkan pesan feedback jika ada
                     if ($message):
-                    ?>
+                        ?>
                         <div class="mb-4 p-4 rounded-lg <?php echo $message_type == 'success' ? 'bg-green-100 text-green-800 border border-green-300' : 'bg-red-100 text-red-800 border border-red-300'; ?>" role="alert">
                             <?php echo $message; ?>
                         </div>
@@ -301,7 +384,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </section>
 
-    <?php include "footer.php"?>
+    <?php include 'footer.php' ?>
 
     <script>
         // JavaScript untuk menu mobile
