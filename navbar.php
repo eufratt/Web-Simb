@@ -10,28 +10,27 @@
         <!-- Header & Navigasi -->
     <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-[85%]">
     <nav class="flex items-center justify-between px-6 py-3
-                bg-white/30 backdrop-blur-md rounded-2xl
+                bg-[#E6C7A5]/80 backdrop-blur-md rounded-2xl
                 shadow-lg border border-white/10">
 
         <!-- Logo -->
-        <a href="#" class="block">
+        <a href="landing.php" class="block">
             <img src="assets/logobg.png" 
                  alt="SILONGSOR Logo" 
-                 class="h-16 w-auto p-2"
-                 onerror="this.onerror=null; this.src='https://placehold.co/180x40/f97316/1F2937?text=SILONGSOR';">
+                 class="h-16 w-auto p-2">
         </a>
 
         <!-- Menu Desktop -->
         <div class="hidden md:flex space-x-6">
-            <a href="#info" class="text-stone-900 hover:text-stone-700 font-medium">Info</a>
-            <a href="#mitigasi" class="text-stone-900 hover:text-stone-700 font-medium">Mitigasi</a>
-            <a href="#saran" class="text-stone-900 hover:text-stone-700 font-medium">Saran</a>
+            <a href="landing.php#info" class="text-stone-900 hover:text-stone-700 font-medium">Info</a>
+            <a href="landing.php#mitigasi" class="text-stone-900 hover:text-stone-700 font-medium">Mitigasi</a>
+            <a href="landing.php#saran" class="text-stone-900 hover:text-stone-700 font-medium">Saran</a>
         </div>
 
         <!-- Tombol -->
-        <a href="#lapor" 
+        <a href="landing.php#lapor" 
            class="hidden md:inline-block bg-orange-500 text-white px-5 py-2 rounded-lg font-medium 
-          shadow hover:bg-orange-600 transition duration-300"">
+          shadow hover:bg-orange-600 transition duration-300">
             Lapor Sekarang
         </a>
 
@@ -49,11 +48,11 @@
     <div id="mobile-menu" class="hidden md:hidden bg-black/70 backdrop-blur-xl
                                 mt-3 rounded-xl px-6 py-4 space-y-3 text-white border border-white/10">
 
-        <a href="#info" class="block text-white/90 hover:text-white">Info</a>
-        <a href="#mitigasi" class="block text-white/90 hover:text-white">Mitigasi</a>
-        <a href="#saran" class="block text-white/90 hover:text-white">Saran</a>
+        <a href="landing.php#info" class="block text-white/90 hover:text-white">Info</a>
+        <a href="landing.php#mitigasi" class="block text-white/90 hover:text-white">Mitigasi</a>
+        <a href="landing.php#saran" class="block text-white/90 hover:text-white">Saran</a>
 
-        <a href="#lapor" 
+        <a href="landing.php#lapor" 
            class="block w-full text-center bg-white/20 text-white py-2 rounded-lg 
                   font-medium shadow hover:bg-white/30 transition duration-300">
             Lapor Sekarang

@@ -73,6 +73,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         'brand-brown': '#78350F', // Coklat
                         'brand-light': '#F3F4F6', // Abu-abu muda
                         'brand-dark': '#1F2937', // Abu-abu tua
+                        'coklat-terang': '#8C552A',
+                        'coklat-gelap': '#7A4F2A',
+                        'khaki': '#E6C7A5',
+
                     }
                 }
             }
@@ -119,25 +123,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- HERO SLIDER -->
     <section id="beranda" class="relative min-h-screen flex items-center justify-start overflow-hidden px-16">
-    <div class="absolute inset-0">
-        <img src="assets/longsor3.jpg" alt="" class="w-full h-full object-cover opacity-85">
-    </div>
+        <div class="absolute inset-0">
+            <img src="assets/longsor3.png" alt="" class="w-full h-full object-cover opacity-85">
+        </div>
 
-   <div class="w-[90%] md:w-[85%] mx-auto">
-        <h1 class="text-6xl font-bold text-white drop-shadow-lg leading-tight">
-            Bencana <br> Longsor
-        </h1>
+        <div class="relative z-20 w-[90%] md:w-[85%] mx-auto">
+            <h1 class="text-6xl font-bold text-white drop-shadow-lg leading-tight">
+                Bencana <br> Longsor
+            </h1>
 
-        <a href="#info"
-           class="inline-block mt-6 px-6 py-3 bg-white/20 border border-white/30 
-                  text-white rounded-lg backdrop-blur-md hover:bg-white/30 transition">
-            Pelajari Lebih Lanjut
-        </a>
-    </div>
-</section
+            <a href="#info"
+                class="inline-block mt-6 px-6 py-3 
+          bg-orange-500 hover:bg-orange-600 
+          text-white rounded-lg shadow transition">
+                Pelajari Lebih Lanjut
+            </a>
+
+        </div>
+    </section>
 
     <!-- Informasi: Apa Itu Tanah Longsor? -->
-    <section id="info" class="py-20 bg-white">
+    <section id="info" class="py-20 bg-coklat-terang">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <!-- Gambar/Ilustrasi -->
@@ -145,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <img src="https://placehold.co/600x400/d4d4d8/1f2937?text=Ilustrasi+Tanah+Longsor" alt="Ilustrasi Tanah Longsor" class="rounded-lg shadow-2xl object-cover w-full h-100">
                 </div>
                 <!-- Teks Penjelasan -->
-                <div class="w-ful md:w-1/2 overscroll-auto md:overscroll-contain overflow-y-auto h-80 p-2">
+                <div class="w-ful md:w-1/2 overscroll-auto md:overscroll-contain overflow-y-auto h-80 p-2 bg-white shadow-xl border border-[#C18F6A]/30 rounded-2xl">
 
                     <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6 mt-2">
                         Definisi Tanah Longsor
@@ -238,7 +244,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <li>Gangguan ekonomi serta lumpuhnya aktivitas masyarakat.</li>
                         <li>Risiko korban jiwa dan hilangnya tempat tinggal.</li>
                     </ul>
-                    
+
                     <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-2 rounded-lg text-center">
                         <p class="font-medium">Memahami risiko di sekitar kita adalah langkah awal untuk keselamatan.</p>
                     </div>
@@ -249,7 +255,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </section>
 
     <!-- Upaya Mitigasi -->
-    <section id="mitigasi" class="py-20 bg-brand-light">
+    <section id="mitigasi" class="py-20 bg-coklat-gelap">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
@@ -295,7 +301,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </section>
 
     <!-- Kontak / CTA -->
-    <section id="lapor" class="py-40 bg-brand-brown text-white">
+    <section id="lapor" class="py-40 bg-coklat-terang text-white">
         <div class="lapor container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">
                 Ada longsor di daerah sekitarmu?
@@ -309,7 +315,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </section>
 
     <!-- Bagian Saran & Keluhan (Sesuai Mockup) -->
-    <section id="kontak" class="py-10 bg-white">
+    <section id="kontak" class="py-10 bg-khaki">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row gap-16">
                 <!-- Info Kontak -->

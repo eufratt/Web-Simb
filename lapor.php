@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </script>
 </head>
 
-<body class="font-sans bg-white text-brand-dark flex flex-col min-h-screen">
+<body class="font-sans bg-[#FAF3E8] text-[#2B221C] flex flex-col min-h-screen">
 
     <?php include "navbar.php" ?>
 
@@ -133,61 +133,65 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php endif; ?>
 
             <!-- Kartu Form (Background Abu-abu sesuai Wireframe) -->
-            <div class="bg-gray-200 rounded-[40px] p-8 md:p-12 shadow-inner">
+            <div class="bg-[#3A2D24]/80 backdrop-blur-xl border border-[#C89F72]/20 
+            rounded-[40px] p-8 md:p-12 shadow-2xl">
+
+                <h2 class="text-3xl font-bold text-[#F0E8D8] mb-2 flex items-center gap-2">
+                    📢 Laporan Kejadian Longsor
+                </h2>
+                <p class="text-[#C89F72] mb-6">Mohon isi data berikut dengan lengkap.</p>
 
                 <form action="lapor.php" method="POST" enctype="multipart/form-data" class="space-y-6">
 
                     <!-- Nama -->
-                    <div>
-                        <input type="text" name="nama" placeholder="Ketik Nama Anda"
-                            class="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent shadow-sm text-gray-700 placeholder-gray-500 bg-white">
-                    </div>
+                    <input type="text" name="nama" placeholder="Ketik Nama Anda"
+                        class="w-full px-6 py-4 rounded-full bg-[#F0E8D8] text-[#2B221C]
+                      border border-[#C89F72]/40 focus:ring-2 focus:ring-[#8C552A] shadow">
 
-                    <!-- Isi Laporan (Textarea dengan rounded corner besar) -->
-                    <div>
-                        <textarea name="isi" rows="6" placeholder="Ketik Isi Laporan Anda"
-                            class="w-full px-6 py-4 rounded-[30px] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent shadow-sm text-gray-700 placeholder-gray-500 bg-white resize-none"></textarea>
-                    </div>
+                    <!-- Isi -->
+                    <textarea name="isi" rows="6" placeholder="Ketik Isi Laporan Anda"
+                        class="w-full px-6 py-4 rounded-[30px] bg-[#F0E8D8] text-[#2B221C]
+                         border border-[#C89F72]/40 focus:ring-2 focus:ring-[#8C552A] shadow resize-none"></textarea>
 
-                    <!-- Tanggal Kejadian -->
+                    <!-- Tanggal -->
                     <div class="relative">
                         <input type="date" name="tanggal"
-                            class="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent shadow-sm text-gray-700 placeholder-gray-500 bg-white cursor-pointer">
-                        <!-- Label visual untuk placeholder date jika browser mendukung -->
-                        <div class="absolute inset-y-0 right-0 flex items-center pr-6 pointer-events-none text-gray-500">
-                            <!-- Icon Calendar -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
+                            class="w-full px-6 py-4 rounded-full bg-[#F0E8D8] text-[#2B221C]
+                          border border-[#C89F72]/40 focus:ring-2 focus:ring-[#8C552A] shadow cursor-pointer">
+
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-6 pointer-events-none text-[#7A4F2A]">
+                            📅
                         </div>
                     </div>
 
-                    <!-- Lokasi Kejadian -->
-                    <div>
-                        <input type="text" name="lokasi" placeholder="Ketik Lokasi Kejadian"
-                            class="w-full px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent shadow-sm text-gray-700 placeholder-gray-500 bg-white">
-                    </div>
+                    <!-- Lokasi -->
+                    <input type="text" name="lokasi" placeholder="Ketik Lokasi Kejadian"
+                        class="w-full px-6 py-4 rounded-full bg-[#F0E8D8] text-[#2B221C]
+                      border border-[#C89F72]/40 focus:ring-2 focus:ring-[#8C552A] shadow">
 
-                    <!-- Unggah Foto -->
-                    <div class="relative group">
-                        <label for="foto" class="flex items-center justify-between w-full px-6 py-4 bg-white rounded-full border border-gray-300 cursor-pointer hover:bg-gray-50 transition shadow-sm">
-                            <span id="file-label" class="text-gray-500">Unggah Foto Kejadian</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 group-hover:text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                        </label>
-                        <input type="file" name="foto" id="foto" class="hidden" accept="image/*" onchange="updateFileName(this)">
-                    </div>
+                    <!-- Foto -->
+                    <label for="foto"
+                        class="flex items-center justify-between w-full px-6 py-4 bg-[#F0E8D8] text-[#2B221C]
+                      rounded-full border border-[#C89F72]/40 cursor-pointer shadow hover:bg-[#E8DFC9] transition">
+                        <span id="file-label">Unggah Foto Kejadian</span>
+                        📷
+                    </label>
+                    <input type="file" id="foto" name="foto" class="hidden">
 
-                    <!-- Tombol Submit -->
-                    <div class="pt-4">
-                        <button type="submit" class="w-full bg-brand-green text-white font-bold py-4 rounded-full shadow-lg hover:bg-green-800 transition duration-300 transform hover:scale-[1.02]">
-                            KIRIM LAPORAN
-                        </button>
-                    </div>
+                    <!-- Submit -->
+                    <button type="submit"
+                        class="w-full bg-[#7A4F2A] hover:bg-[#8C552A] text-white 
+                       font-semibold py-4 rounded-full shadow-xl
+                       transition-all duration-300 hover:scale-[1.03]">
+                        KIRIM LAPORAN
+                    </button>
 
                 </form>
-            </div>
+        </div>
+
+
+        </form>
+        </div>
         </div>
     </main>
 

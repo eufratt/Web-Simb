@@ -132,12 +132,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="py-8 bg-brand-dark text-gray-400 mt-auto">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 SILONGSOR. Dibuat untuk tujuan edukasi.</p>
-        </div>
-    </footer>
-
 </body>
 </html>
