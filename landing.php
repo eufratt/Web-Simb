@@ -1,7 +1,7 @@
 <?php
 // --- Bagian Logika PHP ---
 
-$message = '';  
+$message = '';
 $message_type = '';
 
 // Koneksi ke database
@@ -42,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $message = 'Gagal menyimpan data: ' . $koneksi->error;
             $message_type = 'error';
         }
-
     } else {
         $message = 'Harap pastikan E-mail Address dan Keluhan telah diisi.';
         $message_type = 'error';
@@ -52,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,29 +84,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             scroll-behavior: smooth;
         }
 
-        @keyframes appear{
-            from{
+        @keyframes appear {
+            from {
                 opacity: 0;
                 scale: 0.5;
             }
-            to{
+
+            to {
                 opacity: 1;
                 scale: 1;
             }
         }
 
-        .animasi{
-                animation: appear 1.2s ease-out;
-                animation-timeline: view();
-                animation-range: entry 0% cover 50%;
-                animation-duration: 10s;
+        .animasi {
+            animation: appear 1.2s ease-out;
+            animation-timeline: view();
+            animation-range: entry 0% cover 50%;
+            animation-duration: 10s;
         }
 
-        .block, .lapor{
+        .block,
+        .lapor {
             animation: appear 1.2s ease-out;
-                animation-timeline: view();
-                animation-range: entry 0% cover 30%;
-                animation-duration: 10s;
+            animation-timeline: view();
+            animation-range: entry 0% cover 30%;
+            animation-duration: 10s;
         }
     </style>
 </head>
@@ -146,9 +148,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 Bencana <span class="text-brand-brown">Longsor</span>
             </h1>
             <div class="flex justify-center space-x-4">
-                <a href="#info" class="bg-brand-green text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-green-800 transition duration-300">
-                    Pelajari Lebih Lanjut
-                </a>
+                <button class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500">
+                    <a href="#info" class="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-orange-700 transition duration-300">
+                        Pelajari Lebih Lanjut
+                    </a>
+                </button>
             </div>
         </div>
 
@@ -168,108 +172,107 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <!-- Gambar/Ilustrasi -->
                 <div class="w-full md:w-1/2 animasi">
-                    <img src="https://placehold.co/600x400/d4d4d8/1f2937?text=Ilustrasi+Tanah+Longsor" alt="Ilustrasi Tanah Longsor" class="rounded-lg shadow-2xl object-cover w-full h-full">
+                    <img src="https://placehold.co/600x400/d4d4d8/1f2937?text=Ilustrasi+Tanah+Longsor" alt="Ilustrasi Tanah Longsor" class="rounded-lg shadow-2xl object-cover w-full h-100">
                 </div>
                 <!-- Teks Penjelasan -->
-                <div class="w-full md:w-1/2 overscroll-contain overflow-y-auto h-80 p-4">
+                <div class="w-ful md:w-1/2 overscroll-auto md:overscroll-contain overflow-y-auto h-80 p-2">
 
-    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6 mt-2">
-        Definisi Tanah Longsor
-    </h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6 mt-2">
+                        Definisi Tanah Longsor
+                    </h2>
 
-    <p class="text-gray-600 text-lg mb-4">
-        Tanah longsor adalah perpindahan material pembentuk lereng (berupa batuan, bahan rombakan, tanah, atau material campuran) 
-        yang bergerak ke bawah atau keluar lereng.
-    </p>
+                    <p class="text-gray-600 text-lg mb-4">
+                        Tanah longsor adalah perpindahan material pembentuk lereng (berupa batuan, bahan rombakan, tanah, atau material campuran)
+                        yang bergerak ke bawah atau keluar lereng.
+                    </p>
 
-    <p class="text-gray-600 text-lg mb-6">
-        Peristiwa ini dapat terjadi secara tiba-tiba atau perlahan dan seringkali dipicu oleh faktor alam seperti curah hujan tinggi, 
-        gempa bumi, atau aktivitas manusia yang tidak bertanggung jawab.
-    </p>
-
-    <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-2 rounded-lg text-center">
-        <p class="font-medium">Memahami risiko di sekitar kita adalah langkah awal untuk keselamatan.</p>
-    </div>
+                    <p class="text-gray-600 text-lg mb-6">
+                        Peristiwa ini dapat terjadi secara tiba-tiba atau perlahan dan seringkali dipicu oleh faktor alam seperti curah hujan tinggi,
+                        gempa bumi, atau aktivitas manusia yang tidak bertanggung jawab.
+                    </p>
 
 
-    <!-- =============================== -->
-    <!-- FAKTOR PENYEBAB LONGSOR -->
-    <!-- =============================== -->
+                    <!-- =============================== -->
+                    <!-- FAKTOR PENYEBAB LONGSOR -->
+                    <!-- =============================== -->
 
-    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6 mt-6">
-        Faktor Penyebab Terjadinya Longsor
-    </h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6 mt-6">
+                        Faktor Penyebab Terjadinya Longsor
+                    </h2>
 
-    <h4 class="text-2xl font-semibold text-brand-dark mb-4">
-        A. Faktor Alam
-    </h4>
+                    <h4 class="text-2xl font-semibold text-brand-dark mb-4">
+                        A. Faktor Alam
+                    </h4>
 
-    <ol class="list-decimal ml-6 text-gray-700 space-y-2 mb-6">
-        <li>Perubahan kondisi geologi seperti lapisan tanah yang rapuh atau batuan yang mudah pecah.</li>
-        <li>Curah hujan tinggi yang membuat tanah jenuh air sehingga kehilangan kestabilannya.</li>
-        <li>Topografi curam seperti lereng bukit atau jurang yang rentan mengalami pergerakan tanah.</li>
-    </ol>
+                    <ol class="list-decimal ml-6 text-gray-700 space-y-2 mb-6">
+                        <li>Perubahan kondisi geologi seperti lapisan tanah yang rapuh atau batuan yang mudah pecah.</li>
+                        <li>Curah hujan tinggi yang membuat tanah jenuh air sehingga kehilangan kestabilannya.</li>
+                        <li>Topografi curam seperti lereng bukit atau jurang yang rentan mengalami pergerakan tanah.</li>
+                    </ol>
 
-    <h4 class="text-2xl font-semibold text-brand-dark mb-4">
-        B. Faktor Manusia
-    </h4>
+                    <h4 class="text-2xl font-semibold text-brand-dark mb-4">
+                        B. Faktor Manusia
+                    </h4>
 
-    <ol class="list-decimal ml-6 text-gray-700 space-y-2 mb-8">
-        <li>Penggundulan hutan dan hilangnya akar tanaman yang seharusnya memperkuat tanah.</li>
-        <li>Pembangunan permukiman atau infrastruktur di area rawan longsor tanpa analisis struktur tanah.</li>
-        <li>Sistem drainase buruk yang menyebabkan air menggenang di lereng sehingga memperlemah kestabilan tanah.</li>
-    </ol>
-
-
-    <!-- =============================== -->
-    <!-- TIPE-TIPE TANAH LONGSOR -->
-    <!-- =============================== -->
-
-    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
-        Tipe-Tipe Tanah Longsor
-    </h2>
-
-    <ul class="list-disc ml-6 text-gray-700 space-y-2 mb-8">
-        <li><strong>Falls</strong> – material batu atau tanah jatuh bebas dari tebing yang sangat curam.</li>
-        <li><strong>Slides</strong> – pergerakan tanah yang meluncur pada bidang gelincir, bisa translasi atau rotasional.</li>
-        <li><strong>Flows</strong> – tanah bergerak seperti cairan akibat kejenuhan air.</li>
-        <li><strong>Topples</strong> – tanah atau batuan terjungkal ke depan karena tekanan atau rotasi.</li>
-        <li><strong>Creep</strong> – pergerakan sangat lambat yang sering tidak disadari.</li>
-        <li><strong>Spread</strong> – penyebaran lateral massa tanah akibat kegagalan lapisan bawah.</li>
-    </ul>
+                    <ol class="list-decimal ml-6 text-gray-700 space-y-2 mb-8">
+                        <li>Penggundulan hutan dan hilangnya akar tanaman yang seharusnya memperkuat tanah.</li>
+                        <li>Pembangunan permukiman atau infrastruktur di area rawan longsor tanpa analisis struktur tanah.</li>
+                        <li>Sistem drainase buruk yang menyebabkan air menggenang di lereng sehingga memperlemah kestabilan tanah.</li>
+                    </ol>
 
 
-    <!-- =============================== -->
-    <!-- DAMPAK TANAH LONGSOR -->
-    <!-- =============================== -->
+                    <!-- =============================== -->
+                    <!-- TIPE-TIPE TANAH LONGSOR -->
+                    <!-- =============================== -->
 
-    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
-        Dampak Tanah Longsor
-    </h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
+                        Tipe-Tipe Tanah Longsor
+                    </h2>
 
-    <h4 class="text-2xl font-semibold text-brand-dark mb-4">
-        Dampak Positif
-    </h4>
+                    <ul class="list-disc ml-6 text-gray-700 space-y-2 mb-8">
+                        <li><strong>Falls</strong> – material batu atau tanah jatuh bebas dari tebing yang sangat curam.</li>
+                        <li><strong>Slides</strong> – pergerakan tanah yang meluncur pada bidang gelincir, bisa translasi atau rotasional.</li>
+                        <li><strong>Flows</strong> – tanah bergerak seperti cairan akibat kejenuhan air.</li>
+                        <li><strong>Topples</strong> – tanah atau batuan terjungkal ke depan karena tekanan atau rotasi.</li>
+                        <li><strong>Creep</strong> – pergerakan sangat lambat yang sering tidak disadari.</li>
+                        <li><strong>Spread</strong> – penyebaran lateral massa tanah akibat kegagalan lapisan bawah.</li>
+                    </ul>
 
-    <ul class="list-disc ml-6 text-gray-700 space-y-2 mb-6">
-        <li>Meningkatkan kestabilan tanah setelah material lemah runtuh.</li>
-        <li>Membentuk lahan baru yang dapat dimanfaatkan untuk kegiatan tertentu.</li>
-        <li>Membantu proses pelapukan batuan sehingga menciptakan tanah subur.</li>
-        <li>Meningkatkan kelembapan tanah di area tertentu.</li>
-    </ul>
 
-    <h4 class="text-2xl font-semibold text-brand-dark mb-4">
-        Dampak Negatif
-    </h4>
+                    <!-- =============================== -->
+                    <!-- DAMPAK TANAH LONGSOR -->
+                    <!-- =============================== -->
 
-    <ul class="list-disc ml-6 text-gray-700 space-y-2 mb-10">
-        <li>Kerusakan lingkungan serta rusaknya ekosistem.</li>
-        <li>Kerugian materi seperti rumah, jalan, kendaraan, dan fasilitas umum.</li>
-        <li>Gangguan ekonomi serta lumpuhnya aktivitas masyarakat.</li>
-        <li>Risiko korban jiwa dan hilangnya tempat tinggal.</li>
-    </ul>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
+                        Dampak Tanah Longsor
+                    </h2>
 
-</div>
+                    <h4 class="text-2xl font-semibold text-brand-dark mb-4">
+                        Dampak Positif
+                    </h4>
+
+                    <ul class="list-disc ml-6 text-gray-700 space-y-2 mb-6">
+                        <li>Meningkatkan kestabilan tanah setelah material lemah runtuh.</li>
+                        <li>Membentuk lahan baru yang dapat dimanfaatkan untuk kegiatan tertentu.</li>
+                        <li>Membantu proses pelapukan batuan sehingga menciptakan tanah subur.</li>
+                        <li>Meningkatkan kelembapan tanah di area tertentu.</li>
+                    </ul>
+
+                    <h4 class="text-2xl font-semibold text-brand-dark mb-4">
+                        Dampak Negatif
+                    </h4>
+
+                    <ul class="list-disc ml-6 text-gray-700 space-y-2 mb-10">
+                        <li>Kerusakan lingkungan serta rusaknya ekosistem.</li>
+                        <li>Kerugian materi seperti rumah, jalan, kendaraan, dan fasilitas umum.</li>
+                        <li>Gangguan ekonomi serta lumpuhnya aktivitas masyarakat.</li>
+                        <li>Risiko korban jiwa dan hilangnya tempat tinggal.</li>
+                    </ul>
+                    
+                    <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-2 rounded-lg text-center">
+                        <p class="font-medium">Memahami risiko di sekitar kita adalah langkah awal untuk keselamatan.</p>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -279,9 +282,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <section id="mitigasi" class="py-20 bg-brand-light">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <span class="text-sm font-semibold text-brand-green uppercase tracking-wider">Aksi Nyata</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
-                    Gimana cara menanggulanginya?
+                    Gimana cara memitigasinya?
                 </h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 animasi">
@@ -311,7 +313,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </div>
             <div class="text-center mt-12">
-                <a href="#" class="text-brand-green font-semibold text-lg hover:underline">
+                <a href="#" class="text-brand-brown font-semibold text-lg hover:underline">
                     Lihat Panduan Mitigasi Lengkap &rarr;
                 </a>
             </div>
@@ -319,14 +321,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </section>
 
     <!-- Kontak / CTA -->
-    <section id="lapor" class="py-40 bg-brand-green text-white">
+    <section id="lapor" class="py-40 bg-brand-brown text-white">
         <div class="lapor container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">
                 Ada longsor di daerah sekitarmu?
             </h2>
-            <a href="lapor.php" class="bg-white text-brand-brown px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-gray-100 transition duration-300">
-                Lapor Sekarang
-            </a>
+            <button class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500">
+                <a href="lapor.php" class="bg-white text-brand-brown px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-gray-100 transition duration-300">
+                    Lapor Sekarang
+                </a>
+            </button>
         </div>
     </section>
 
@@ -365,7 +369,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <?php
                     // Menampilkan pesan feedback jika ada
                     if ($message):
-                        ?>
+                    ?>
                         <div class="mb-4 p-4 rounded-lg <?php echo $message_type == 'success' ? 'bg-green-100 text-green-800 border border-green-300' : 'bg-red-100 text-red-800 border border-red-300'; ?>" role="alert">
                             <?php echo $message; ?>
                         </div>
@@ -386,7 +390,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <textarea id="saran" name="saran" rows="4" placeholder="Jelaskan keluhan Anda di sini..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-green focus:border-brand-green"></textarea>
                         </div>
                         <div>
-                            <button type="submit" class="w-auto bg-brand-green text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-green-800 transition duration-300">
+                            <button type="submit" class="w-auto bg-brand-brown text-white px-6 py-3 rounded-lg font-semibold shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                                 Kirim Masukan
                             </button>
                         </div>

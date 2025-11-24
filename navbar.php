@@ -1,5 +1,14 @@
-<!-- Header & Navigasi -->
-    <header class="sticky top-0 z-50 w-full bg-gray-300 shadow-md">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <!-- Header & Navigasi -->
+    <header class="sticky top-0 z-50 w-full bg-gray-100 shadow-md">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center h-20">
             <a href="#" class="block">
                 <!-- Menggunakan gambar logo yang diunggah -->
@@ -8,13 +17,15 @@
                      onerror="this.onerror=null; this.src='https://placehold.co/180x40/f97316/1F2937?text=SILONGSOR';">
             </a>
             <div class="hidden md:flex space-x-6">
-                <a href="#info" class="text-gray-600 hover:text-brand-green font-medium">Info</a>
-                <a href="#mitigasi" class="text-gray-600 hover:text-brand-green font-medium">Mitigasi</a>
-                <a href="#saran" class="text-gray-600 hover:text-brand-green font-medium">Saran</a>
+                <a href="#info" class="text-gray-600 hover:text-brand-brown font-medium">Info</a>
+                <a href="#mitigasi" class="text-gray-600 hover:text-brand-brown font-medium">Mitigasi</a>
+                <a href="#saran" class="text-gray-600 hover:text-brand-brown font-medium">Saran</a>
             </div>
-            <a href="#lapor" class="hidden md:inline-block bg-brand-brown text-white px-5 py-2 rounded-lg font-medium shadow-lg hover:bg-yellow-900 transition duration-300">
+            <button class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"> 
+                <a href="#lapor" class="hidden md:inline-block bg-brand-brown text-white px-5 py-2 rounded-lg font-medium shadow-lg hover:bg-yellow-800 transition duration-300">
                 Lapor Sekarang
             </a>
+            </button>
             <!-- Tombol Menu Mobile -->
             <button id="mobile-menu-button" class="md:hidden text-brand-dark">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -32,3 +43,5 @@
             </a>
         </div>
     </header>
+    </body>
+    </html>
