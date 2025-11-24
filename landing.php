@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $saran = isset($_POST['saran']) ? htmlspecialchars(trim($_POST['saran'])) : '';
     $tanggal = date("Y-m-d H:i:s");
 
-    if (!empty($email) && !empty($saran)) {
+    if (!empty($nama) && !empty($email) && !empty($saran)) {
 
         // INSERT INTO BIASA
         $sql = "
