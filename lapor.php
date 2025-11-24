@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include "navbar.php" ?>
 
     <!-- Konten Utama -->
-    <main class="flex-grow py-12 px-4">
+    <main class="flex-grow px-4 pt-40 pb-12">
         <div class="container mx-auto max-w-3xl">
 
             <!-- Pesan Feedback PHP -->

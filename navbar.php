@@ -8,40 +8,68 @@
     </head>
     <body>
         <!-- Header & Navigasi -->
-    <header class="sticky top-0 z-50 w-full bg-gray-100 shadow-md">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center h-20">
-            <a href="#" class="block">
-                <!-- Menggunakan gambar logo yang diunggah -->
-                <!-- Pastikan file 'logobg.jpg' berada di direktori yang sama dengan index.php atau perbarui path-nya -->
-                <img src="assets/logobg.png" alt="SILONGSOR Logo" class="h-20 w-auto mt-1 mb-1 p-3"
-                     onerror="this.onerror=null; this.src='https://placehold.co/180x40/f97316/1F2937?text=SILONGSOR';">
-            </a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#info" class="text-gray-600 hover:text-brand-brown font-medium">Info</a>
-                <a href="#mitigasi" class="text-gray-600 hover:text-brand-brown font-medium">Mitigasi</a>
-                <a href="#saran" class="text-gray-600 hover:text-brand-brown font-medium">Saran</a>
-            </div>
-            <button class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"> 
-                <a href="#lapor" class="hidden md:inline-block bg-brand-brown text-white px-5 py-2 rounded-lg font-medium shadow-lg hover:bg-yellow-800 transition duration-300">
-                Lapor Sekarang
-            </a>
-            </button>
-            <!-- Tombol Menu Mobile -->
-            <button id="mobile-menu-button" class="md:hidden text-brand-dark">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
-        </nav>
-        <!-- Menu Mobile (Dropdown) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-4 space-y-2">
-            <a href="#info" class="block text-gray-600 hover:text-brand-green font-medium">Info</a>
-            <a href="#mitigasi" class="block text-gray-600 hover:text-brand-green font-medium">Mitigasi</a>
-            <a href="#saran" class="block text-gray-600 hover:text-brand-green font-medium">Saran</a>
-            <a href="#lapor" class="block w-full text-center bg-brand-brown text-white px-5 py-2 rounded-lg font-medium shadow-lg hover:bg-yellow-900 transition duration-300 mt-2">
-                Lapor Sekarang
-            </a>
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-[85%]">
+    <nav class="flex items-center justify-between px-6 py-3
+                bg-black/30 backdrop-blur-xl rounded-2xl
+                shadow-lg border border-white/10">
+
+        <!-- Logo -->
+        <a href="#" class="block">
+            <img src="assets/logobg.png" 
+                 alt="SILONGSOR Logo" 
+                 class="h-16 w-auto p-2"
+                 onerror="this.onerror=null; this.src='https://placehold.co/180x40/f97316/1F2937?text=SILONGSOR';">
+        </a>
+
+        <!-- Menu Desktop -->
+        <div class="hidden md:flex space-x-6">
+            <a href="#info" class="text-white/90 hover:text-white font-medium">Info</a>
+            <a href="#mitigasi" class="text-white/90 hover:text-white font-medium">Mitigasi</a>
+            <a href="#saran" class="text-white/90 hover:text-white font-medium">Saran</a>
         </div>
-    </header>
+
+        <!-- Tombol -->
+        <a href="#lapor" 
+           class="hidden md:inline-block bg-white/20 text-white px-5 py-2 rounded-lg font-medium 
+                  shadow hover:bg-white/30 transition duration-300">
+            Lapor Sekarang
+        </a>
+
+        <!-- Tombol Menu Mobile -->
+        <button id="mobile-menu-button" class="md:hidden text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden bg-black/70 backdrop-blur-xl
+                                mt-3 rounded-xl px-6 py-4 space-y-3 text-white border border-white/10">
+
+        <a href="#info" class="block text-white/90 hover:text-white">Info</a>
+        <a href="#mitigasi" class="block text-white/90 hover:text-white">Mitigasi</a>
+        <a href="#saran" class="block text-white/90 hover:text-white">Saran</a>
+
+        <a href="#lapor" 
+           class="block w-full text-center bg-white/20 text-white py-2 rounded-lg 
+                  font-medium shadow hover:bg-white/30 transition duration-300">
+            Lapor Sekarang
+        </a>
+    </div>
+</header>
+
+<script>
+    const mobileBtn = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    mobileBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+</script>
+
+
     </body>
     </html>

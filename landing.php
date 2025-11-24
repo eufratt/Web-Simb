@@ -120,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- HERO SLIDER -->
     <section id="beranda" class="relative min-h-screen flex items-center justify-start overflow-hidden px-16">
     <div class="absolute inset-0">
-        <img src="assets/GambarBeranda.png" alt="" class="w-full h-full object-cover opacity-85">
+        <img src="assets/longsor3.jpg" alt="" class="w-full h-full object-cover opacity-85">
     </div>
 
     <div class="relative z-10 text-left max-w-xl">
