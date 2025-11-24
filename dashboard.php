@@ -47,15 +47,16 @@ $user_id = $_SESSION['user_id'];  // jika mau dipakai
         <div class="space-y-4">
           <?php while ($row = $laporan->fetch_assoc()): ?>
             <div class="flex items-center justify-between p-3 bg-white rounded shadow-sm">
-              <span><?= date('d M Y H:i', strtotime($row['tanggal'])) ?></span>
-              <div class="w-20 h-20 bg-gray-300 flex items-center justify-center rounded">
+              <div class="md:w-1/3">
+                <span><?= date('d M Y H:i', strtotime($row['tanggal'])) ?></span>
+              </div>
+              <div class="md:w-1/3 w-20 h-20 bg-gray-300 flex items-center justify-center rounded">
                 <img src="uploads/<?= $row['foto'] ?>" class="w-full h-full object-cover rounded" />
               </div>
-              <div class="flex flex-col text-right">
+              <div class="md:w-1/3 flex flex-col text-right">
                 <span class="font-semibold"><?= htmlspecialchars($row['lokasi']) ?></span>
                 <span class="text-gray-600 text-sm"><?= htmlspecialchars($row['deskripsi']) ?></span>
               </div>
-
             </div>
           <?php endwhile; ?>
         </div>
