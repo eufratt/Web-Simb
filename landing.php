@@ -118,53 +118,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php include 'navbar.php' ?>
 
     <!-- HERO SLIDER -->
-    <section id="beranda" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-light">
+    <section id="beranda" class="relative min-h-screen flex items-center justify-start overflow-hidden px-16">
+    <div class="absolute inset-0">
+        <img src="assets/GambarBeranda.png" alt="" class="w-full h-full object-cover opacity-85">
+    </div>
 
-        <!-- Wrapper semua slide -->
-        <div id="slider" class="absolute inset-0 w-full h-full blur-sm">
+    <div class="relative z-10 text-left max-w-xl">
+        <h1 class="text-5xl md:text-7xl font-bold font-serif tracking-wide text-white mb-10 leading-tight">
+            Bencana <span class="text-brand-brown">Longsor</span>
+        </h1>
 
-            <!-- Slide 1 -->
-            <div class="slide absolute inset-0 opacity-100 transition-opacity duration-3000">
-                <img src="assets/longsor1.jpeg"
-                    class="w-full h-full object-cover opacity-80">
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-3000">
-                <img src="assets/longsor2.png"
-                    class="w-full h-full object-cover opacity-80">
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-3000">
-                <img src="assets/longsor3.jpg"
-                    class="w-full h-full object-cover opacity-80">
-            </div>
+        <div class="flex justify-start space-x-4">
+            <a href="#info" class="warna text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-orange-700 transition duration-300">
+                Pelajari Lebih Lanjut
+            </a>
         </div>
-
-        <!-- Konten hero -->
-        <div class="relative z-10 text-center px-6">
-            <h1 class="text-5xl md:text-7xl font-bold text-brand-dark mb-10 leading-tight">
-                Bencana <span class="text-brand-brown">Longsor</span>
-            </h1>
-            <div class="flex justify-center space-x-4">
-                <button class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500">
-                    <a href="#info" class="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-orange-700 transition duration-300">
-                        Pelajari Lebih Lanjut
-                    </a>
-                </button>
-            </div>
-        </div>
-
-        <!-- Tombol Prev / Next -->
-        <button id="prevBtn" class="absolute left-5 top-1/2 -translate-y-1/2 bg-black/40 text-white px-4 py-2 rounded-full">
-            ‹
-        </button>
-        <button id="nextBtn" class="absolute right-5 top-1/2 -translate-y-1/2 bg-black/40 text-white px-4 py-2 rounded-full">
-            ›
-        </button>
-    </section>
-
+    </div>
+</section
 
     <!-- Informasi: Apa Itu Tanah Longsor? -->
     <section id="info" class="py-20 bg-white">
