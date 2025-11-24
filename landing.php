@@ -123,17 +123,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <img src="assets/longsor3.jpg" alt="" class="w-full h-full object-cover opacity-85">
     </div>
 
-    <div class="relative z-10 text-left max-w-xl">
-        <h1 class="text-5xl md:text-7xl font-bold font-serif tracking-wide text-white mb-10 leading-tight">
-            Bencana <span class="text-brand-brown">Longsor</span>
+   <div class="w-[90%] md:w-[85%] mx-auto">
+        <h1 class="text-6xl font-bold text-white drop-shadow-lg leading-tight">
+            Bencana <br> Longsor
         </h1>
 
-        <div class="flex justify-start space-x-4">
-            <a href="#info" class="warna text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:bg-orange-700 transition duration-300">
-                Pelajari Lebih Lanjut
-            </a>
-        </div>
-    </div>
+        <a href="#info"
+           class="inline-block mt-6 px-6 py-3 bg-white/20 border border-white/30 
+                  text-white rounded-lg backdrop-blur-md hover:bg-white/30 transition">
+            Pelajari Lebih Lanjut
+        </a>
+    </div>
 </section
 
     <!-- Informasi: Apa Itu Tanah Longsor? -->

@@ -10,7 +10,7 @@
         <!-- Header & Navigasi -->
     <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] md:w-[85%]">
     <nav class="flex items-center justify-between px-6 py-3
-                bg-black/30 backdrop-blur-xl rounded-2xl
+                bg-white/30 backdrop-blur-md rounded-2xl
                 shadow-lg border border-white/10">
 
         <!-- Logo -->
@@ -23,15 +23,15 @@
 
         <!-- Menu Desktop -->
         <div class="hidden md:flex space-x-6">
-            <a href="#info" class="text-white/90 hover:text-white font-medium">Info</a>
-            <a href="#mitigasi" class="text-white/90 hover:text-white font-medium">Mitigasi</a>
-            <a href="#saran" class="text-white/90 hover:text-white font-medium">Saran</a>
+            <a href="#info" class="text-stone-900 hover:text-stone-700 font-medium">Info</a>
+            <a href="#mitigasi" class="text-stone-900 hover:text-stone-700 font-medium">Mitigasi</a>
+            <a href="#saran" class="text-stone-900 hover:text-stone-700 font-medium">Saran</a>
         </div>
 
         <!-- Tombol -->
         <a href="#lapor" 
-           class="hidden md:inline-block bg-white/20 text-white px-5 py-2 rounded-lg font-medium 
-                  shadow hover:bg-white/30 transition duration-300">
+           class="hidden md:inline-block bg-orange-500 text-white px-5 py-2 rounded-lg font-medium 
+          shadow hover:bg-orange-600 transition duration-300"">
             Lapor Sekarang
         </a>
 
