@@ -50,8 +50,9 @@ $user_id = $_SESSION['user_id'];  // jika mau dipakai
               <div class="md:w-1/3">
                 <span><?= date('d M Y H:i', strtotime($row['tanggal'])) ?></span>
               </div>
-              <div class="md:w-1/3 w-20 h-20 bg-gray-300 flex items-center justify-center rounded">
-                <img src="uploads/<?= $row['foto'] ?>" class="w-full h-full object-cover rounded" />
+              <div class="w-20 h-20 bg-gray-300 flex items-center justify-center rounded">
+                <img src="uploads/<?= $row['foto'] ?>" class="w-full h-full object-cover rounded cursor-pointer hover:scale-105 transition"
+                  onclick="openImage('uploads/<?= $row['foto'] ?>')" />
               </div>
               <div class="md:w-1/3 flex flex-col text-right">
                 <span class="font-semibold"><?= htmlspecialchars($row['lokasi']) ?></span>
@@ -80,6 +81,30 @@ $user_id = $_SESSION['user_id'];  // jika mau dipakai
       </div>
     </section>
   </main>
+
+
+<!-- Modal Preview Gambar -->
+<div id="imgModal" class="fixed inset-0 bg-black/60 flex hidden items-center justify-center z-50">
+  <div class="relative">
+    <img id="modalImage" src="" class="max-h-[90vh] max-w-[90vw] rounded shadow-lg">
+    <button onclick="closeImage()" class="absolute top-2 right-2 bg-white px-3 py-1 rounded-full shadow">
+      ✕
+    </button>
+  </div>
+</div>
+
 </body>
+
+<script>
+function openImage(src) {
+  document.getElementById("modalImage").src = src;
+  document.getElementById("imgModal").classList.remove("hidden");
+}
+
+function closeImage() {
+  document.getElementById("imgModal").classList.add("hidden");
+}
+</script>
+
 
 </html>

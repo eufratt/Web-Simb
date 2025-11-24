@@ -289,26 +289,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 animasi">
                 <!-- Kartu Mitigasi 1 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
-                    <img src="https://placehold.co/600x400/86efac/1c1917?text=Reboisasi" alt="Menanam Pohon" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/86efac/1c1917?text=Pra Bencana" alt="Menanam Pohon" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Reboisasi & Tanam Vetiver</h3>
-                        <p class="text-gray-600">Menanam pohon dan tanaman dengan akar kuat (seperti vetiver) di lereng dapat membantu mengikat tanah dan mengurangi erosi.</p>
+                        <h3 class="text-xl font-semibold mb-3">Pra-Bencana</h3>
+                        <p class="text-gray-600">1. Mengurangi tingkat keterjalan lereng permukaan maupun air</p>
+                        <p class="text-gray-600">2. Hindarkan daerah rawan bencana untuk pembangunan pemukiman dan fasilitas utama lainnya.</p>
                     </div>
                 </div>
                 <!-- Kartu Mitigasi 2 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
-                    <img src="https://placehold.co/600x400/a3e635/1c1917?text=Terasering" alt="Terasering" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/a3e635/1c1917?text=Saat Bencana" alt="Terasering" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Membuat Terasering</h3>
-                        <p class="text-gray-600">Di lahan miring, pembuatan terasering (sengkedan) efektif untuk mengurangi kecepatan aliran air dan menahan tanah.</p>
+                        <h3 class="text-xl font-semibold mb-3">Saat Bencana</h3>
+                        <p class="text-gray-600">1. Peringatan dini dan koordinasi penanganan darurat</p>
+                        <p class="text-gray-600">2. Menjangkau wilayah aman dari bencana tanah longsor</p>
                     </div>
                 </div>
                 <!-- Kartu Mitigasi 3 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
-                    <img src="https://placehold.co/600x400/fca5a5/1c1917?text=Sistem+Peringatan" alt="Sistem Peringatan Dini" class="w-full h-48 object-cover">
+                    <img src="https://placehold.co/600x400/fca5a5/1c1917?text=Pasca Bencana" alt="Sistem Peringatan Dini" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Sistem Peringatan Dini</h3>
-                        <p class="text-gray-600">Membangun sistem peringatan dini (EWS) sederhana di komunitas untuk memantau curah hujan dan pergerakan tanah.</p>
+                        <h3 class="text-xl font-semibold mb-3">Pasca Bencana</h3>
+                        <p class="text-gray-600">Hindari wilayah longsor</p>
+                        <p class="text-gray-600">Jika terjadi hujan, antisipasi longsor susulan</p>
+                        <p class="text-gray-600">Membersihkan material pasca longsor</p>
                     </div>
                 </div>
             </div>
