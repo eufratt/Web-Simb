@@ -115,9 +115,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     </script>
+    <style>
+    body {
+        background-image: url('./assets/background_desert.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* bikin efek parallax */
+    }
+    body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(80, 50, 20, 0.60); /* warna coklat + opacity 45% */
+    pointer-events: none; /* supaya overlay tidak mengganggu klik */
+    z-index: -1; /* biar tetap di belakang konten */
+}
+</style>
 </head>
 
-<body class="font-sans bg-[#FAF3E8] text-[#2B221C] flex flex-col min-h-screen">
+<body class="font-sans text-[#2B221C] flex flex-col min-h-screen">
 
     <?php include "navbar.php" ?>
 

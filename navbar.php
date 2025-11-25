@@ -40,17 +40,17 @@
         <nav class="hidden md:flex items-center space-x-10">
 
             <a href="#info" 
-                class="menu-glow text-lg font-medium">
+                class="menu-glow text-lg font-medium hover:text-brand-brown/90">
                 Info
             </a>
 
             <a href="#mitigasi" 
-                class="menu-glow text-lg font-medium">
+                class="menu-glow text-lg font-medium hover:text-brand-brown/90">
                 Mitigasi
             </a>
 
             <a href="#saran" 
-                class="menu-glow text-lg font-medium">
+                class="menu-glow text-lg font-medium hover:text-brand-brown/90">
                 Saran
             </a>
         </nav>
@@ -59,8 +59,8 @@
         <div class="flex items-center space-x-4">
             <button class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                 <a href="#lapor" class="hidden md:inline-block 
-                px-4 py-2 bg-brand-brown/70 text-white rounded-xl
-                hover:bg-brand-brown/50 border border-white/30 backdrop-blur-lg transition duration-300">
+                px-4 py-2 bg-brand-brown/100 text-white rounded-xl
+                hover:bg-brand-brown/80 border border-white/30 transition duration-300">
                     Lapor Sekarang
                 </a>
             </button>

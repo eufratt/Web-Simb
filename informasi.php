@@ -1,5 +1,5 @@
 <!-- Informasi: Apa Itu Tanah Longsor? -->
-<section id="info" class="py-20 bg-stone-700">
+<section id="info" class="py-20 bg-stone-600">
     <div class="container mx-auto px-2 pt-1">
         <div class="flex flex-col md:flex-row items-center gap-12">
             <!-- Gambar/Ilustrasi -->
