@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="absolute inset-0 bg-black/40"></div>
         </div>
 
-        <div class="relative z-10 text-left max-w-xl brightness-200 md:brightness-200 text-white font-bold drop-shadow-[0_0_20px_rgba(255,255,255,0.8)]">
+        <div class="relative z-10 text-left max-w-xl brightness-50 md:brightness-100 text-white font-bold drop-shadow-[0_0_20px_rgba(255,255,255,0.8)]">
 
             <h1 class="text-5xl md:text-7xl font-bold font-serif tracking-wide text-white mb-4 leading-tight">
                 Bencana <span class="text-brand-brown">Longsor</span>

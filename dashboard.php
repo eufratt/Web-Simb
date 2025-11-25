@@ -96,7 +96,7 @@ $user_id = $_SESSION['user_id'];  // jika mau dipakai
 
 
     <!-- Saran Pengguna -->
-    <section>
+    <section class="mb-14">
       <h2 class="text-center text-xl font-semibold mb-8 text-[#7A4F2A]">Saran dari Pengguna</h2>
 
       <div class="space-y-8">

@@ -6,7 +6,7 @@
             <div class="w-full md:w-1/2 bg-white/10 backdrop-blur-3xl border border-white/20
     shadow-lg rounded-2xl px-1 py-1 flex items-center justify-between">
                 <!-- <img src="" alt="Ilustrasi Tanah Longsor" class="rounded-lg shadow-2xl object-cover w-full h-100"> -->
-                <video autoplay muted loop playsinline class="w-full h-auto border rounded-xl drop-shadow-[0_0_40px_rgba(255,255,255,0.8)]">
+                <video autoplay muted loop playsinline class="w-full h-auto border rounded-xl drop-shadow-[0_0_17px_rgba(255,255,255,0.8)]">
                     <source src="assets/VideoAnimasi.mp4" type="video/mp4">
                 </video>
             </div>
