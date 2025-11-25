@@ -52,45 +52,46 @@ $user_id = $_SESSION['user_id'];  // jika mau dipakai
     <!-- Laporan Terbaru -->
     <section class="mb-16">
       <h2 class="text-center text-xl font-semibold mb-8 text-[#7A4F2A]">Laporan Terbaru</h2>
+      <div class="space-y-2">
+        <?php while ($row = $laporan->fetch_assoc()): ?>
+          <div class="flex justify-between items-start p-4 bg-white rounded-xl border border-[#DCC2A4]/60 shadow-sm hover:shadow-lg transition">
 
-      <?php while ($row = $laporan->fetch_assoc()): ?>
-        <div class="flex justify-between items-start p-4 bg-white rounded-xl border border-[#DCC2A4]/60 shadow-sm hover:shadow-lg transition">
+            <!-- Bagian Kiri -->
+            <div class="flex-1 pr-4">
 
-          <!-- Bagian Kiri -->
-          <div class="flex-1 pr-4">
+              <!-- Tanggal -->
+              <div class="text-sm text-[#B69E89] mb-1">
+                <?= date('d M Y H:i', strtotime($row['tanggal'])) ?>
+              </div>
 
-            <!-- Tanggal -->
-            <div class="text-sm text-[#B69E89] mb-1">
-              <?= date('d M Y H:i', strtotime($row['tanggal'])) ?>
+              <!-- Nama -->
+              <div class="font-bold text-[#7A4F2A] text-lg">
+                <?= htmlspecialchars($row['nama']) ?>
+              </div>
+
+              <!-- Lokasi -->
+              <div class="text-[#5A4637] text-sm italic mb-2">
+                <?= htmlspecialchars($row['lokasi']) ?>
+              </div>
+
+              <!-- Deskripsi -->
+              <p class="text-[#6F604F] text-sm leading-snug">
+                <?= htmlspecialchars($row['deskripsi']) ?>
+              </p>
             </div>
 
-            <!-- Nama -->
-            <div class="font-bold text-[#7A4F2A] text-lg">
-              <?= htmlspecialchars($row['nama']) ?>
-            </div>
+            <!-- Foto di kanan -->
+            <?php if ($row['foto']): ?>
+              <div class="ml-4">
+                <img src="uploads/<?= $row['foto'] ?>"
+                  class="w-24 h-24 rounded-lg shadow cursor-pointer object-cover hover:scale-105 transition"
+                  onclick="openImage('uploads/<?= $row['foto'] ?>')">
+              </div>
+            <?php endif; ?>
 
-            <!-- Lokasi -->
-            <div class="text-[#5A4637] text-sm italic mb-2">
-              <?= htmlspecialchars($row['lokasi']) ?>
-            </div>
-
-            <!-- Deskripsi -->
-            <p class="text-[#6F604F] text-sm leading-snug">
-              <?= htmlspecialchars($row['deskripsi']) ?>
-            </p>
           </div>
-
-          <!-- Foto di kanan -->
-          <?php if ($row['foto']): ?>
-            <div class="ml-4">
-              <img src="uploads/<?= $row['foto'] ?>"
-                class="w-24 h-24 rounded-lg shadow cursor-pointer object-cover hover:scale-105 transition"
-                onclick="openImage('uploads/<?= $row['foto'] ?>')">
-            </div>
-          <?php endif; ?>
-
-        </div>
-      <?php endwhile; ?>
+        <?php endwhile; ?>
+      </div>
 
     </section>
 
@@ -99,7 +100,7 @@ $user_id = $_SESSION['user_id'];  // jika mau dipakai
     <section class="mb-14">
       <h2 class="text-center text-xl font-semibold mb-8 text-[#7A4F2A]">Saran dari Pengguna</h2>
 
-      <div class="space-y-8">
+      <div class="space-y-2">
         <?php while ($row = $saran->fetch_assoc()): ?>
           <div class="bg-white rounded-2xl p-6 border border-[#DCC2A4] shadow-md">
 
