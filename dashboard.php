@@ -3,10 +3,10 @@
 $koneksi = new mysqli("localhost", "root", "", "tanah_longsor_db");
 
 // Query laporan
-$laporan = $koneksi->query("SELECT * FROM laporan ORDER BY tanggal DESC LIMIT 5");
+$laporan = $koneksi->query("SELECT * FROM laporan ORDER BY tanggal DESC LIMIT 10");
 
 // Query saran
-$saran = $koneksi->query("SELECT * FROM saran ORDER BY tanggal DESC LIMIT 10");
+$saran = $koneksi->query("SELECT * FROM saran ORDER BY tanggal DESC LIMIT 5");
 
 session_start();
 

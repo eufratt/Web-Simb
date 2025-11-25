@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     },
                     colors: {
                         'brand-green': '#166534', // Hijau tua
-                        'brand-brown': '#78350F', // Coklat
+                        'brand-brown': '#7e492bff', // Coklat
                         'brand-light': '#F3F4F6', // Abu-abu muda
                         'brand-dark': '#1F2937', // Abu-abu tua
                     }
@@ -158,50 +158,95 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php include 'informasi.php' ?>
 
     <!-- Upaya Mitigasi -->
-    <section id="mitigasi" class="py-20 bg-brand-light">
+    <section id="mitigasi" class="py-24 bg-[#FFF4E6]">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
-                    Gimana cara memitigasinya?
+
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-[#7A4F2A] drop-shadow-sm">
+                    Gimana Cara Memitigasinya?
                 </h2>
+                <p class="text-[#5A4637] mt-3">
+                    Langkah-langkah pencegahan sebelum, saat, dan setelah bencana terjadi.
+                </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 animasi">
-                <!-- Kartu Mitigasi 1 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
-                    <img src="https://placehold.co/600x400/86efac/1c1917?text=Pra Bencana" alt="Menanam Pohon" class="w-full h-48 object-cover">
+
+            <!-- Grid Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 animasi">
+
+                <!-- Card Item -->
+                <div class="group bg-white rounded-2xl border border-[#DCC2A4]
+                        shadow-md hover:shadow-xl transition hover:-translate-y-2 overflow-hidden">
+
+                    <!-- Image -->
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400/be6430ff/1c1917?text=Pra+Bencana"
+                            class="w-full h-48 object-cover group-hover:brightness-110 transition">
+
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#7A4F2A]/60 to-transparent"></div>
+                    </div>
+
+                    <!-- Text -->
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Pra-Bencana</h3>
-                        <p class="text-gray-600">1. Mengurangi tingkat keterjalan lereng permukaan maupun air</p>
-                        <p class="text-gray-600">2. Hindarkan daerah rawan bencana untuk pembangunan pemukiman dan fasilitas utama lainnya.</p>
+                        <h3 class="text-xl font-bold text-[#7A4F2A] mb-3 items-center gap-2">
+                            <span class="text-[#D86B32]">●</span> Mengurangi tingkat keterjalan lereng permukaan & air. 
+                            <br>
+                            <span class="text-[#D86B32]">●</span> Menghindari pembangunan di daerah rawan bencana.
+                        </h3>
                     </div>
                 </div>
-                <!-- Kartu Mitigasi 2 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
-                    <img src="https://placehold.co/600x400/a3e635/1c1917?text=Saat Bencana" alt="Terasering" class="w-full h-48 object-cover">
+
+                <!-- Card 2 -->
+                <div class="group bg-white rounded-2xl border border-[#DCC2A4]
+                        shadow-md hover:shadow-xl transition hover:-translate-y-2 overflow-hidden">
+
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400/be6430ff/1c1917?text=Saat+Bencana"
+                            class="w-full h-48 object-cover group-hover:brightness-110 transition">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#7A4F2A]/60 to-transparent"></div>
+                    </div>
+
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Saat Bencana</h3>
-                        <p class="text-gray-600">1. Peringatan dini dan koordinasi penanganan darurat</p>
-                        <p class="text-gray-600">2. Menjangkau wilayah aman dari bencana tanah longsor</p>
+                        <h3 class="text-xl font-bold text-[#7A4F2A] mb-3 items-center gap-2">
+                            <span class="text-[#D86B32]">●</span> Lakukan koordinasi penanganan darurat secara cepat.
+                            <br>
+                            <span class="text-[#D86B32]">●</span> Segera menuju wilayah aman & hindari tebing curam.
+                        </h3>
                     </div>
                 </div>
-                <!-- Kartu Mitigasi 3 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
-                    <img src="https://placehold.co/600x400/fca5a5/1c1917?text=Pasca Bencana" alt="Sistem Peringatan Dini" class="w-full h-48 object-cover">
+
+                <!-- Card 3 -->
+                <div class="group bg-white rounded-2xl border border-[#DCC2A4]
+                        shadow-md hover:shadow-xl transition hover:-translate-y-2 overflow-hidden">
+
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400/be6430ff/1c1917?text=Pasca+Bencana"
+                            class="w-full h-48 object-cover group-hover:brightness-110 transition">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#7A4F2A]/60 to-transparent"></div>
+                    </div>
+
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Pasca Bencana</h3>
-                        <p class="text-gray-600">Hindari wilayah longsor</p>
-                        <p class="text-gray-600">Jika terjadi hujan, antisipasi longsor susulan</p>
-                        <p class="text-gray-600">Membersihkan material pasca longsor</p>
+                        <h3 class="text-xl font-bold text-[#7A4F2A] mb-3 items-center gap-2">
+                            <span class="text-[#D86B32]">●</span> Hindari wilayah yang masih berpotensi longsor.
+                            <br>
+                            <span class="text-[#D86B32]">●</span> Waspadai hujan karena risiko longsor susulan.
+                            <br>
+                            <span class="text-[#D86B32]">●</span> Bersihkan material secara aman & bertahap.
+                        </h3>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-12">
-                <a href="#" class="text-brand-brown font-semibold text-lg hover:underline">
-                    Lihat Panduan Mitigasi Lengkap &rarr;
+
+            <!-- Link -->
+            <div class="text-center mt-16">
+                <a href="#"
+                    class="inline-block text-[#7A4F2A] font-bold hover:text-[#D86B32] transition text-lg">
+                    Lihat Panduan Mitigasi Lengkap →
                 </a>
             </div>
         </div>
     </section>
+
 
     <!-- Kontak / CTA -->
     <section id="lapor" class="py-40 bg-brand-brown text-white">
