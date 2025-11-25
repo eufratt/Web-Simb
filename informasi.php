@@ -3,7 +3,7 @@
     <div class="container mx-auto px-2 pt-1">
         <div class="flex flex-col md:flex-row items-center gap-12">
             <!-- Gambar/Ilustrasi -->
-            <div class="w-full md:w-1/2 animasi bg-white/10 backdrop-blur-3xl border border-white/20
+            <div class="w-full md:w-1/2 bg-white/10 backdrop-blur-3xl border border-white/20
     shadow-lg rounded-2xl px-1 py-1 flex items-center justify-between">
                 <!-- <img src="" alt="Ilustrasi Tanah Longsor" class="rounded-lg shadow-2xl object-cover w-full h-100"> -->
                 <video autoplay muted loop playsinline class="w-full h-auto border rounded-xl drop-shadow-[0_0_40px_rgba(255,255,255,0.8)]">
@@ -11,7 +11,7 @@
                 </video>
             </div>
             <!-- Teks Penjelasan -->
-            <!-- <div class="w-ful md:w-1/2 overscroll-auto md:overscroll-contain overflow-y-auto h-80 p-2 bg-white/10 backdrop-blur-2xl border border-white/20 shadow-lg rounded-2xl px-6 text-white">
+            <div class="w-ful md:w-1/2 overscroll-auto md:overscroll-contain overflow-y-auto h-80 p-2 bg-white/10 backdrop-blur-2xl border border-white/20 shadow-lg rounded-2xl px-6 text-white">
 
                 <h2 class="text-3xl md:text-4xl font-bold mb-6 mt-2">
                     Definisi Tanah Longsor
@@ -90,7 +90,7 @@
 
                 <div class="bg-white/20 border border-white/40 text-white p-2 rounded-lg text-center">
                     <p class="font-medium">Memahami risiko di sekitar kita adalah langkah awal untuk keselamatan.</p>
-                </div> -->
+                </div>
 
             </div>
 
