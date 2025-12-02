@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tanggal = htmlspecialchars(trim($_POST['tanggal'] ?? ''));
     $lokasi = htmlspecialchars(trim($_POST['lokasi'] ?? ''));
     $tanggal = date("Y-m-d H:i:s");
+    $admin = 2;
 
 
     // 2. Validasi sederhana
@@ -67,13 +68,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Query INSERT biasa
             $sql = "
-            INSERT INTO laporan (nama, lokasi, deskripsi, tanggal, foto)
+            INSERT INTO laporan (nama, lokasi, deskripsi, tanggal, foto, id_admin)
             VALUES (
                 '$nama',
                 '$lokasi',
                 '$isi',
                 '$tanggal',
-                $fotoValue
+                $fotoValue,
+                $admin
             )
             ";
 

@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error_message = "Username dan password tidak boleh kosong.";
     } else {
         // LOGIN SEDERHANA TANPA HASH
-        $sql = "SELECT id, username, password FROM users WHERE username = '$username'";
+        $sql = "SELECT id, username, password FROM admin WHERE username = '$username'";
         $result = $conn->query($sql);
 
         if ($result && $result->num_rows == 1) {

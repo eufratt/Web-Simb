@@ -26,12 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // INSERT INTO BIASA
         $sql = "
-            INSERT INTO saran (nama, email, pesan, tanggal)
+            INSERT INTO saran (nama, email, pesan, tanggal, id_admin)
             VALUES (
                 '$nama',
                 '$email',
                 '$saran',
-                '$tanggal'
+                '$tanggal',
+                2
             )
         ";
 
