@@ -195,7 +195,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <span id="file-label">Unggah Foto Kejadian</span>
                         📷
                     </label>
-                    <input type="file" id="foto" name="foto" class="hidden">
+                    <input type="file" id="foto" name="foto" class="hidden" onchange="updateFileName(this)">
 
                     <!-- Submit -->
                     <button type="submit"

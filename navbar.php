@@ -8,16 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        /* Efek asap lembut + glow halus */
-        .menu-glow {
-            @apply text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.9)] 
-            transition ease-out duration-300;
-        }
-
-        .menu-glow:hover {
-            @apply drop-shadow-[0_0_20px_rgba(255,255,255,1)] 
-            text-white;
-        }
+        
     </style>
 </head>
 

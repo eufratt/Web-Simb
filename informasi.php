@@ -23,8 +23,7 @@
                     <!-- Tab Definisi -->
                     <div id="definisi" class="tab-pane active">
                         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Definisi Tanah Longsor</h2>
-                        <p class="text-white text-lg mb-4 leading-relaxed">Tanah longsor adalah perpindahan material pembentuk lereng...</p>
-                        <p class="text-white text-lg mb-6 leading-relaxed">Peristiwa ini dapat terjadi secara tiba-tiba atau perlahan...</p>
+                        <p class="text-white text-lg mb-4 leading-relaxed">Tanah longsor adalah perpindahan massa material, seperti tanah, batuan, atau puing, yang bergerak ke bawah atau keluar lereng. Proses ini terjadi karena gaya pendorong yang bekerja pada lereng lebih besar daripada gaya penahannya, yang dipicu oleh faktor seperti hujan deras, gempa bumi, atau erosi. </p>
                     </div>
 
                     <!-- Tab Faktor Penyebab -->
@@ -32,15 +31,15 @@
                         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Faktor Penyebab Terjadinya Longsor</h2>
                         <h4 class="text-2xl font-semibold mb-4">A. Faktor Alam</h4>
                         <ol class="list-decimal ml-6 space-y-3 mb-6">
-                            <li class="leading-relaxed">Perubahan kondisi geologi...</li>
-                            <li class="leading-relaxed">Curah hujan tinggi...</li>
-                            <li class="leading-relaxed">Topografi curam...</li>
+                            <li class="leading-relaxed">Disebabkan oleh kondisi geologis, seperti kemiringan lapisan, batuan lapuk. gempa bumi dan masih banyak lagi.</li>
+                            <li class="leading-relaxed">Iklim pada daerah tersebut yang mempunyai curah hujan sangat tinggi</li>
+                            <li class="leading-relaxed">Keadaan topografi berupa kondisi lereng yang curam</li>
                         </ol>
                         <h4 class="text-2xl font-semibold mb-4">B. Faktor Manusia</h4>
                         <ol class="list-decimal ml-6 space-y-3 mb-8">
-                            <li class="leading-relaxed">Penggundulan hutan...</li>
-                            <li class="leading-relaxed">Pembangunan permukiman...</li>
-                            <li class="leading-relaxed">Sistem drainase buruk...</li>
+                            <li class="leading-relaxed">Penggundulan hutan, hilangnya akar sebagai pengikat tanah.</li>
+                            <li class="leading-relaxed">Kesadaran masyarakat tentang bahaya longsor masih sangat rendah</li>
+                            <li class="leading-relaxed">Sistem drainase di daerah lereng berjalan kurang baik</li>
                         </ol>
                     </div>
 
@@ -48,12 +47,11 @@
                     <div id="tipe" class="tab-pane hidden">
                         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Tipe-Tipe Tanah Longsor</h2>
                         <ul class="list-disc ml-6 space-y-3 mb-8">
-                            <li class="leading-relaxed"><strong>Falls</strong> – material batu...</li>
-                            <li class="leading-relaxed"><strong>Slides</strong> – pergerakan tanah...</li>
-                            <li class="leading-relaxed"><strong>Flows</strong> – tanah bergerak...</li>
-                            <li class="leading-relaxed"><strong>Topples</strong> – tanah atau batuan...</li>
-                            <li class="leading-relaxed"><strong>Creep</strong> – pergerakan lambat...</li>
-                            <li class="leading-relaxed"><strong>Spread</strong> – penyebaran lateral...</li>
+                            <li class="leading-relaxed"><strong>Falls</strong> – material jatuh bebas dari tebing.</li>
+                            <li class="leading-relaxed"><strong>Slides</strong> – massa bergerak pada bidang gelincir (rotasional/translasi).</li>
+                            <li class="leading-relaxed"><strong>Flows</strong> – massa berubah jadi mirip cairan (debris flow, mudflow).</li>
+                            <li class="leading-relaxed"><strong>Topples</strong> – batuan/tiang tanah miring lalu roboh.</li>
+                            <li class="leading-relaxed"><strong>Creep</strong> – pergerakan lambat tanah di lereng.</li>
                         </ul>
                     </div>
 
@@ -62,17 +60,17 @@
                         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Dampak Tanah Longsor</h2>
                         <h4 class="text-2xl font-semibold mb-4">Dampak Positif</h4>
                         <ul class="list-disc ml-6 space-y-3 mb-6">
-                            <li class="leading-relaxed">Meningkatkan kestabilan tanah...</li>
-                            <li class="leading-relaxed">Membentuk lahan baru...</li>
-                            <li class="leading-relaxed">Membantu proses pelapukan batuan...</li>
-                            <li class="leading-relaxed">Meningkatkan kelembapan tanah...</li>
+                            <li class="leading-relaxed">Mengembalikan kondisi tanah menjadi gembur kembali</li>
+                            <li class="leading-relaxed">Merubah tekstur tanah dan mempercepat proses peleburan batuan pada tanah.</li>
+                            <li class="leading-relaxed">Menyadarkan masyarakat untuk menjaga keseimbangan lingkungan hidup</li>
+                            <li class="leading-relaxed">Menciptakan ide-ide penelitian terkait dengan penyebab dan pencegahan terhadap tanah longsor</li>
                         </ul>
                         <h4 class="text-2xl font-semibold mb-4">Dampak Negatif</h4>
                         <ul class="list-disc ml-6 space-y-3 mb-10">
-                            <li class="leading-relaxed">Kerusakan lingkungan...</li>
-                            <li class="leading-relaxed">Kerugian materi...</li>
-                            <li class="leading-relaxed">Gangguan ekonomi...</li>
-                            <li class="leading-relaxed">Risiko korban jiwa...</li>
+                            <li class="leading-relaxed">Merusak sanitasi lingkungan.</li>
+                            <li class="leading-relaxed">Harga jual tanah menjadi menurun karena letak tanahnya dalam wilayah bahaya.</li>
+                            <li class="leading-relaxed">Hilangnya vegetasi.</li>
+                            <li class="leading-relaxed">Keseimbangan ekosistem terganggu.</li>
                         </ul>
                         <div class="bg-white/20 border border-white/40 text-white p-4 rounded-lg text-center shadow-md">
                             <p class="font-medium italic">Memahami risiko di sekitar kita adalah langkah awal untuk keselamatan.</p>

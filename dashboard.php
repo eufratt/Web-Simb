@@ -1,12 +1,13 @@
 <?php
 // Koneksi database
-$koneksi = new mysqli("localhost", "root", "", "tanah_longsor_db");
+// $koneksi = new mysqli("localhost", "root", "", "tanah_longsor_db");
+include "config.php";
 
 // Query laporan
-$laporan = $koneksi->query("SELECT * FROM laporan ORDER BY tanggal DESC LIMIT 10");
+$laporan = $conn->query("SELECT * FROM laporan ORDER BY tanggal DESC LIMIT 10");
 
 // Query saran
-$saran = $koneksi->query("SELECT * FROM saran ORDER BY tanggal DESC LIMIT 5");
+$saran = $conn->query("SELECT * FROM saran ORDER BY tanggal DESC LIMIT 5");
 
 session_start();
 
@@ -109,20 +110,28 @@ $user_id = $_SESSION['user_id'];  // jika mau dipakai
               <span class="text-sm text-[#8A7865]"><?= htmlspecialchars($row['email']) ?></span>
             </div>
 
-            <div class="text-xs text-[#B69E89] mb-3">
+            <div class="text-xs text-[#B69E89] mb-3 flex justify-between items-start">
               <?= date('d M Y H:i', strtotime($row['tanggal'])) ?>
+              <a href="delete_saran.php?id=<?= $row['id'] ?>"
+                onclick="return confirm('Yakin ingin menghapus saran ini?')"
+                class="text-red-600 hover:text-red-800 text-xs font-semibold ml-4">
+                Hapus
+              </a>
             </div>
 
             <p class="text-[#5A4637] text-sm">
               <?= htmlspecialchars($row['pesan']) ?>
             </p>
-
           </div>
         <?php endwhile; ?>
       </div>
 
     </section>
   </main>
+
+  <?php if (isset($_GET['msg']) && $_GET['msg'] == 'deleted'): ?>
+    
+  <?php endif; ?>
 
 
   <!-- Modal Preview -->

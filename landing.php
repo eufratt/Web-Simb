@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $message_type = 'error';
         }
     } else {
-        $message = 'Harap pastikan E-mail Address dan Keluhan telah diisi.';
+        $message = 'Harap pastikan E-mail Address dan saran telah diisi.';
         $message_type = 'error';
     }
 }
@@ -240,7 +240,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <!-- Link -->
             <div class="text-center mt-16">
-                <a href="#"
+                <a href="https://bpbd.jogjaprov.go.id/berita/mitigasi-bencana-tanah-longsor-1"
                     class="inline-block text-[#7A4F2A] font-bold hover:text-[#D86B32] transition text-lg">
                     Lihat Panduan Mitigasi Lengkap →
                 </a>
@@ -316,7 +316,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </div>
                         <div class="mb-6">
                             <label for="saran" class="block text-sm font-medium text-gray-700 mb-1">Saran</label>
-                            <textarea id="saran" name="saran" rows="4" placeholder="Jelaskan keluhan Anda di sini..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-green focus:border-brand-green"></textarea>
+                            <textarea id="saran" name="saran" rows="4" placeholder="Jelaskan saran dan keluhan Anda di sini..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-green focus:border-brand-green"></textarea>
                         </div>
                         <div>
                             <button type="submit" class="w-auto bg-brand-brown text-white px-6 py-3 rounded-lg font-semibold shadow-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
@@ -348,31 +348,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             });
         });
 
-        // slider beranda
-        const slides = document.querySelectorAll(".slide");
-        let index = 0;
-
-        function showSlide(i) {
-            slides.forEach((slide, idx) => {
-                slide.style.opacity = idx === i ? "1" : "0";
-            });
-        }
-
-        document.getElementById("nextBtn").addEventListener("click", () => {
-            index = (index + 1) % slides.length;
-            showSlide(index);
-        });
-
-        document.getElementById("prevBtn").addEventListener("click", () => {
-            index = (index - 1 + slides.length) % slides.length;
-            showSlide(index);
-        });
-
-        // Auto slide
-        setInterval(() => {
-            index = (index + 1) % slides.length;
-            showSlide(index);
-        }, 4000);
     </script>
 
 </body>
